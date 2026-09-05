@@ -1,6 +1,7 @@
 # Route Structure — Terreno Apps
 
-Terreno apps use Expo Router with the same file conventions as standard Expo apps. See the Expo `building-native-ui` skill `references/route-structure.md` for dynamic routes, groups, and query params.
+Terreno apps use Expo Router with the same file conventions as standard Expo apps. Use
+Expo Router's public documentation for dynamic routes, groups, and query parameters.
 
 ## Terreno-specific conventions
 

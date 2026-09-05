@@ -66,4 +66,5 @@ skip. Missing docs for a user-visible or architectural change is a failed slice.
 ## Integration
 
 Pick, Roast, and Brew require this skill for user-visible or architectural work.
-`create-pr` does not open until the docs in this slice match the shipped behavior.
+Brew does not open or update the PR until the docs in this slice match the shipped
+behavior.

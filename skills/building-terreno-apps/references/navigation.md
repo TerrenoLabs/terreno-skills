@@ -1,6 +1,8 @@
 # Navigation — Terreno Apps
 
-Terreno apps use Expo Router. For low-level Expo Router APIs (Link, Stack.Screen, modals, form sheets), see the Expo `building-native-ui` skill. This reference covers Terreno-specific navigation patterns.
+Terreno apps use Expo Router. Use Expo Router's public documentation for low-level APIs
+such as `Link`, `Stack.Screen`, modals, and form sheets. This reference covers
+Terreno-specific navigation patterns.
 
 ## Auth flow
 
