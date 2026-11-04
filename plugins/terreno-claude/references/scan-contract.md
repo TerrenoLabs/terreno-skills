@@ -1,7 +1,7 @@
 # Scan contract
 
 Aim, Sweep, Sift, Plot, and Track are **transitions**, not the orchestration loop.
-`terreno-scan-campaign` is the invocable outer loop; it must never be recorded as a
+`terreno-loop-campaign` is the invocable outer loop; it must never be recorded as a
 `stage` value.
 
 A scan is not a code change. Scan stages discover, prioritize, and shape work; the
@@ -9,8 +9,8 @@ Terreno lifecycle (`terreno-1-grow`, `terreno-2-pick`, `terreno-3-roast`,
 `terreno-4-brew`, `terreno-5-taste`) implements and ships it. No scan stage edits
 product code, commits, pushes, or opens a PR.
 
-Two outer loops drive the stages. `terreno-scan-campaign` runs bounded rounds and stops
-at each gate. `terreno-scan-loop` stays resident: it keeps the campaign moving, routes
+Two outer loops drive the stages. `terreno-loop-campaign` runs bounded rounds and stops
+at each gate. `terreno-loop-resident` stays resident: it keeps the campaign moving, routes
 every PR to a named human per [`pr-routing.md`](pr-routing.md), and heartbeats over open
 PRs per [`heartbeat.md`](heartbeat.md) so review comments, red CI, and merges are handled
 without a person restarting anything.

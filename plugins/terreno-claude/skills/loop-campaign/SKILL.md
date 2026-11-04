@@ -1,5 +1,5 @@
 ---
-name: scan-campaign
+name: loop-campaign
 description: Drive a long-term codebase goal to its target — charter it, sweep and sift the repository into findings, plot PR-sized slices, run each slice through the Terreno lifecycle, then re-measure and repeat until the metric hits target or a genuine human decision is required. Not a scan stage — an outer loop that invokes the scan stages and the lifecycle. Use when asked to run a scan campaign, work toward a long-term engineering goal, or keep scanning and fixing until an outcome is reached.
 ---
 

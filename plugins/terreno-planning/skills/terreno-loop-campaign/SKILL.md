@@ -1,5 +1,5 @@
 ---
-name: terreno-scan-campaign
+name: terreno-loop-campaign
 description: Drive a long-term codebase goal to its target — charter it, sweep and sift the repository into findings, plot PR-sized slices, run each slice through the Terreno lifecycle, then re-measure and repeat until the metric hits target or a genuine human decision is required. Not a scan stage — an outer loop that invokes the scan stages and the lifecycle. Use when asked to run a scan campaign, work toward a long-term engineering goal, or keep scanning and fixing until an outcome is reached.
 ---
 
@@ -10,7 +10,7 @@ them round after round and hands each plotted slice to the Terreno lifecycle, un
 goal metric reaches its target or a genuine human decision is required.
 
 For a session that stays resident — heartbeating over open PRs, answering review, and
-refilling work as PRs merge — use `terreno-scan-loop` instead. This skill runs the rounds
+refilling work as PRs merge — use `terreno-loop-resident` instead. This skill runs the rounds
 and stops at each gate; the loop wraps it and keeps going.
 
 Read the shared [`scan contract`](../../references/scan-contract.md),

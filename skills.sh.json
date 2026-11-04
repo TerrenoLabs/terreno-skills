@@ -87,8 +87,8 @@
         "terreno-scan-3-sift",
         "terreno-scan-4-plot",
         "terreno-scan-5-track",
-        "terreno-scan-campaign",
-        "terreno-scan-loop"
+        "terreno-loop-campaign",
+        "terreno-loop-resident"
       ],
       "title": "Code scans"
     },

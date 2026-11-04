@@ -53,8 +53,8 @@ Two outer loops drive them:
 
 | Skill | Loop |
 | --- | --- |
-| **Scan campaign** (`terreno-scan-campaign`) | Aim once, then Sweep → Sift → Plot → lifecycle → Track, round after round, until the metric hits target, the budget is spent, or a genuine human decision is required. Stops at each gate. |
-| **Scan loop** (`terreno-scan-loop`) | Resident session: keeps the campaign moving **and** heartbeats over open campaign PRs — route, answer review through Taste, fix red CI, Track merges — refilling work up to `wipLimit`. Quiet ticks print nothing; each comment is answered exactly once. |
+| **Scan campaign** (`terreno-loop-campaign`) | Aim once, then Sweep → Sift → Plot → lifecycle → Track, round after round, until the metric hits target, the budget is spent, or a genuine human decision is required. Stops at each gate. |
+| **Scan loop** (`terreno-loop-resident`) | Resident session: keeps the campaign moving **and** heartbeats over open campaign PRs — route, answer review through Taste, fix red CI, Track merges — refilling work up to `wipLimit`. Quiet ticks print nothing; each comment is answered exactly once. |
 
 Aim settles who reviews the PRs before any PR exists (`fixed`, `codeowners`, `blame`,
 `round-robin`, or an explicit `none`), verifies the handles, and records the `review`
@@ -213,9 +213,9 @@ are removed; invoke the canonical stages directly.
 | Claude Code | `terreno` | [`.claude-plugin/marketplace.json`](../.claude-plugin/marketplace.json) | `/terreno:pick-roast-loop` |
 
 The scan skills ship inside the same plugin on every host.
-Bounded rounds: `/terreno-scan-campaign` (Cursor), `$terreno-scan-campaign` (Codex),
-`/terreno:scan-campaign` (Claude Code).
-Resident loop: `/terreno-scan-loop`, `$terreno-scan-loop`, `/terreno:scan-loop`.
+Bounded rounds: `/terreno-loop-campaign` (Cursor), `$terreno-loop-campaign` (Codex),
+`/terreno:loop-campaign` (Claude Code).
+Resident loop: `/terreno-loop-resident`, `$terreno-loop-resident`, `/terreno:loop-resident`.
 
 All three hosts ship continuous Pick–Roast, phase-planning, and Taste-sweep outer loops.
 Cursor and Claude Code also load the bundled `pre-commit` and `ui-verifier` agents;
