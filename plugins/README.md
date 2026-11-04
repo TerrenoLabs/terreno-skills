@@ -173,7 +173,7 @@ under `.rulesync/skills/` and are generated for supported agent ecosystems with
 Install the generated skill set directly with:
 
 ```bash
-npx skills add TerrenoLabs/terreno
+npx skills add TerrenoLabs/terreno-skills
 bun run skills:sync
 ```
 
@@ -225,14 +225,14 @@ Codex currently consumes the combined skills without plugin-defined agents.
 Claude Code install:
 
 ```text
-/plugin marketplace add TerrenoLabs/terreno
+/plugin marketplace add TerrenoLabs/terreno-skills
 /plugin install terreno@terreno-plugins
 ```
 
 Codex install:
 
 ```text
-codex plugin marketplace add TerrenoLabs/terreno
+codex plugin marketplace add TerrenoLabs/terreno-skills
 codex plugin install terreno-planning --source terreno-plugins
 ```
 
