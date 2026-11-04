@@ -8,8 +8,8 @@ description: Run an approved scan charter across the repository — execute dete
 Execute the approved charter across the repository and return raw candidate findings with
 reproducible evidence. Sweep discovers; it does not judge, rank, or fix.
 
-Read the shared [`scan contract`](references/scan-contract.md) and
-[`agentic map-reduce`](references/mapreduce.md), plus the
+Read the shared [`scan contract`](../../references/scan-contract.md) and
+[`agentic map-reduce`](../../references/mapreduce.md), plus the
 [`worker briefing`](references/worker-briefing.md), before acting.
 
 ## Preconditions
@@ -40,7 +40,7 @@ Read the shared [`scan contract`](references/scan-contract.md) and
 5. **Map.** Spawn one fresh worker per shard with no parent conversation, using the
    worker briefing. Run them concurrently up to the harness's practical limit. Each worker
    returns candidates conforming to
-   [`finding.schema.json`](references/finding.schema.json) and nothing else.
+   [`finding.schema.json`](../../references/finding.schema.json) and nothing else.
 6. **Collect.** Validate every returned candidate against the schema. Drop malformed
    entries and record how many and from which shard. Retry a failed worker once with the
    same briefing; record a second failure as a failed shard without failing the sweep.

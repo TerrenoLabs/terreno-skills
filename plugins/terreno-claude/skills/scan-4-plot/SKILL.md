@@ -1,5 +1,5 @@
 ---
-name: 4-plot
+name: scan-4-plot
 description: Turn ranked scan findings into PR-sized slices and hand the top slice to the Terreno IP and task system, writing a Grow-ready brief with metric-linked acceptance criteria and verification methods for each slice. Use after a sift produces a findings report; not for discovering findings, implementing them, or PR operations.
 ---
 

@@ -8,9 +8,9 @@ description: Reduce raw scan candidates into a trustworthy findings report — d
 Turn a pile of worker candidates into a short, ranked, defensible findings list. A
 finding that survives Sift is one an engineer can act on without re-investigating.
 
-Read the shared [`scan contract`](references/scan-contract.md),
-[`agentic map-reduce`](references/mapreduce.md), and
-[`goal tracking`](references/goal-tracking.md) before acting.
+Read the shared [`scan contract`](../../references/scan-contract.md),
+[`agentic map-reduce`](../../references/mapreduce.md), and
+[`goal tracking`](../../references/goal-tracking.md) before acting.
 
 ## Preconditions
 

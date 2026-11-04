@@ -13,11 +13,11 @@ For a session that stays resident — heartbeating over open PRs, answering revi
 refilling work as PRs merge — use `terreno-scan-loop` instead. This skill runs the rounds
 and stops at each gate; the loop wraps it and keeps going.
 
-Read the shared [`scan contract`](references/scan-contract.md),
-[`agentic map-reduce`](references/mapreduce.md),
-[`goal tracking`](references/goal-tracking.md), and
-[`PR routing`](references/pr-routing.md). The campaign state must conform to
-[`scan-state.schema.json`](references/scan-state.schema.json).
+Read the shared [`scan contract`](../../references/scan-contract.md),
+[`agentic map-reduce`](../../references/mapreduce.md),
+[`goal tracking`](../../references/goal-tracking.md), and
+[`PR routing`](../../references/pr-routing.md). The campaign state must conform to
+[`scan-state.schema.json`](../../references/scan-state.schema.json).
 
 ## Scope
 

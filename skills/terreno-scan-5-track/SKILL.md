@@ -8,9 +8,9 @@ description: Re-measure a scan campaign's goal metric after slices land, close o
 A campaign is only working if the number moved. Track re-measures the goal metric,
 reconciles the findings against reality, records the round, and names the next move.
 
-Read the shared [`scan contract`](references/scan-contract.md),
-[`goal tracking`](references/goal-tracking.md), and
-[`heartbeat`](references/heartbeat.md) before acting.
+Read the shared [`scan contract`](../../references/scan-contract.md),
+[`goal tracking`](../../references/goal-tracking.md), and
+[`heartbeat`](../../references/heartbeat.md) before acting.
 
 ## Preconditions
 

@@ -1,7 +1,7 @@
 {
   "name": "terreno-planning",
   "version": "2.12.0",
-  "description": "Terreno lifecycle and app workflows: Grow, Pick/Roast, Brew, Taste, continuous outer loops, backend/API, UI, data, schema, admin, docs, upgrades, deployment, and verification agents.",
+  "description": "Terreno lifecycle (Grow, Pick/Roast, Brew, Taste), goal-driven scans (Aim, Sweep, Sift, Plot, Track), app-building, documentation, deployment, and verification workflows.",
   "author": {
     "name": "Terreno",
     "email": "terreno@flourish.health",
@@ -10,7 +10,17 @@
   "homepage": "https://github.com/TerrenoLabs/terreno/blob/master/plugins/README.md",
   "repository": "https://github.com/TerrenoLabs/terreno",
   "license": "MIT",
-  "keywords": ["terreno", "planning", "sdlc", "implementation", "review", "tdd"],
+  "keywords": [
+    "codebase-health",
+    "implementation",
+    "map-reduce",
+    "planning",
+    "review",
+    "scan",
+    "sdlc",
+    "tdd",
+    "terreno"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Terreno Planning",

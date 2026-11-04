@@ -8,10 +8,10 @@ description: Turn a long-term codebase goal into an approved scan charter — me
 Turn "make the codebase better at X" into a charter a fresh Sweep agent can execute
 without conversation history, and a metric that proves whether the campaign worked.
 
-Read the shared [`scan contract`](references/scan-contract.md),
-[`agentic map-reduce`](references/mapreduce.md),
-[`goal tracking`](references/goal-tracking.md),
-[`PR routing`](references/pr-routing.md), and the
+Read the shared [`scan contract`](../../references/scan-contract.md),
+[`agentic map-reduce`](../../references/mapreduce.md),
+[`goal tracking`](../../references/goal-tracking.md),
+[`PR routing`](../../references/pr-routing.md), and the
 [`charter template`](references/charter.md) before acting.
 
 ## Preconditions

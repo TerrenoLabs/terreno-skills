@@ -10,12 +10,12 @@ sweep, sift, plot, hand a slice to the lifecycle, open a routed PR — and **ser
 is already open** — answering human review, fixing red CI, tracking merges. Work happens
 in fresh subagents; this session holds only the goal, the state, and the schedule.
 
-Read [`scan contract`](references/scan-contract.md),
-[`heartbeat`](references/heartbeat.md),
-[`PR routing`](references/pr-routing.md),
-[`goal tracking`](references/goal-tracking.md), and
-[`agentic map-reduce`](references/mapreduce.md). Campaign state conforms to
-[`scan-state.schema.json`](references/scan-state.schema.json).
+Read [`scan contract`](../../references/scan-contract.md),
+[`heartbeat`](../../references/heartbeat.md),
+[`PR routing`](../../references/pr-routing.md),
+[`goal tracking`](../../references/goal-tracking.md), and
+[`agentic map-reduce`](../../references/mapreduce.md). Campaign state conforms to
+[`scan-state.schema.json`](../../references/scan-state.schema.json).
 
 ## Scope
 

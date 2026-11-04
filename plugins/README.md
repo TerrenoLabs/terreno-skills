@@ -37,10 +37,9 @@ and persist state:
 | **Planning loop** (`terreno-planning-loop`) | Walk Grow/Pick/Brew/Taste. Default Grow once, then Pick once (Pick owns pick-roast). Pass `phases=` to restrict. |
 | **Taste sweep** (`terreno-taste-sweep`) | Find the author's open non-draft PRs that are conflicting or failing, isolate each one, and reinvoke Taste until mergeable or blocked. |
 
-## `terreno-scan` — goal-driven code scans
+## Goal-driven code scans
 
-An optional second plugin that turns a long-term outcome into measured work. It depends
-on `terreno-planning`: scan stages discover and shape, the lifecycle implements and ships.
+The same plugin also carries scan skills that turn a long-term outcome into measured work. Scan stages discover and shape, the lifecycle implements and ships.
 
 | # | Stage | Contract |
 | --- | --- | --- |
@@ -74,14 +73,14 @@ Aim PASS → Sweep → Sift
 
 No scan stage edits product code, commits, or opens a PR. Contracts and schemas:
 
-- [`references/scan-contract.md`](terreno-scan/references/scan-contract.md)
-- [`references/mapreduce.md`](terreno-scan/references/mapreduce.md)
-- [`references/goal-tracking.md`](terreno-scan/references/goal-tracking.md)
-- [`references/heartbeat.md`](terreno-scan/references/heartbeat.md)
-- [`references/pr-routing.md`](terreno-scan/references/pr-routing.md)
-- [`scan-result.schema.json`](terreno-scan/references/scan-result.schema.json)
-- [`scan-state.schema.json`](terreno-scan/references/scan-state.schema.json)
-- [`finding.schema.json`](terreno-scan/references/finding.schema.json)
+- [`references/scan-contract.md`](terreno-planning/references/scan-contract.md)
+- [`references/mapreduce.md`](terreno-planning/references/mapreduce.md)
+- [`references/goal-tracking.md`](terreno-planning/references/goal-tracking.md)
+- [`references/heartbeat.md`](terreno-planning/references/heartbeat.md)
+- [`references/pr-routing.md`](terreno-planning/references/pr-routing.md)
+- [`scan-result.schema.json`](terreno-planning/references/scan-result.schema.json)
+- [`scan-state.schema.json`](terreno-planning/references/scan-state.schema.json)
+- [`finding.schema.json`](terreno-planning/references/finding.schema.json)
 
 Reference docs: [`docs/reference/scan-plugin.md`](../docs/reference/scan-plugin.md).
 
@@ -213,10 +212,10 @@ are removed; invoke the canonical stages directly.
 | Codex | `terreno-planning` | [`.agents/plugins/marketplace.json`](../.agents/plugins/marketplace.json) | `$terreno-pick-roast-loop` |
 | Claude Code | `terreno` | [`.claude-plugin/marketplace.json`](../.claude-plugin/marketplace.json) | `/terreno:pick-roast-loop` |
 
-The scan plugin publishes from the same marketplaces as `terreno-scan` on every host.
+The scan skills ship inside the same plugin on every host.
 Bounded rounds: `/terreno-scan-campaign` (Cursor), `$terreno-scan-campaign` (Codex),
-`/terreno-scan:campaign` (Claude Code, from the generated `terreno-scan-claude/`).
-Resident loop: `/terreno-scan-loop`, `$terreno-scan-loop`, `/terreno-scan:loop`.
+`/terreno:scan-campaign` (Claude Code).
+Resident loop: `/terreno-scan-loop`, `$terreno-scan-loop`, `/terreno:scan-loop`.
 
 All three hosts ship continuous Pick–Roast, phase-planning, and Taste-sweep outer loops.
 Cursor and Claude Code also load the bundled `pre-commit` and `ui-verifier` agents;

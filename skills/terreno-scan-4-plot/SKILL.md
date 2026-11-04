@@ -9,9 +9,9 @@ A findings report is not work. Plot converts ranked findings into ordered, PR-si
 slices and hands the top one to the lifecycle, which owns the IP, the task list, and the
 implementation.
 
-Read the shared [`scan contract`](references/scan-contract.md),
-[`goal tracking`](references/goal-tracking.md), and
-[`PR routing`](references/pr-routing.md) before acting.
+Read the shared [`scan contract`](../../references/scan-contract.md),
+[`goal tracking`](../../references/goal-tracking.md), and
+[`PR routing`](../../references/pr-routing.md) before acting.
 
 ## Preconditions
 

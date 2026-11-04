@@ -1,5 +1,5 @@
 ---
-name: 1-aim
+name: scan-1-aim
 description: Turn a long-term codebase goal into an approved scan charter — measurable metric, captured baseline, dry-run detection rules, exclusions, validity rule, severity rubric, and slice policy. Use when asked to scan a codebase for an outcome ("improve build time", "find N+1 queries", "reduce maintenance overhead", "make us WCAG-compliant"), to set a long-term engineering goal, or to start or reshape a scan campaign; not for implementation, PR operations, or one-off searches.
 ---
 
