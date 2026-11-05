@@ -25,6 +25,7 @@
         "terreno-data-fetching",
         "debug-syncdb-with-mcp",
         "mongoose-schema-safety",
+        "mongo-index-review",
         "generate-sdk",
         "building-terreno-apps",
         "building-admin-interfaces",
