@@ -2,7 +2,7 @@
   "name": "terreno-planning",
   "displayName": "Terreno",
   "description": "Terreno lifecycle (Grow, Pick/Roast, Brew, Taste), goal-driven scans (Aim, Sweep, Sift, Plot, Track), app-building, documentation, deployment, and verification workflows.",
-  "version": "2.12.0",
+  "version": "2.13.0",
   "author": {
     "name": "Terreno",
     "email": "terreno@flourish.health"
