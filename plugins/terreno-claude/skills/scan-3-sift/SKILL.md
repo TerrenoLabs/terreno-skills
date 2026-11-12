@@ -1,6 +1,8 @@
 ---
 name: scan-3-sift
 description: Reduce raw scan candidates into a trustworthy findings report — dedupe, adversarially verify, drop what does not reproduce or does not move the goal metric, rank by impact over effort, and write the round's findings report. Use after a sweep returns candidates; not for running detection rules, shaping goals, or writing code.
+metadata:
+  internal: true
 ---
 
 # Sift — reduce

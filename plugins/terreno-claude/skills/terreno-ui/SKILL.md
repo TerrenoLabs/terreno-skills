@@ -8,6 +8,8 @@ description: >-
   React Native primitives. Lifecycle composition: Grow for UI shape, Pick for
   implementation, Roast for UI conformance review. Not for backend APIs, RTK
   Query, or Expo Router setup.
+metadata:
+  internal: true
 ---
 # @terreno/ui
 

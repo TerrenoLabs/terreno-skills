@@ -7,6 +7,8 @@ description: >-
   announcement pack, or upload release announcements as drafts or live.
 targets:
   - '*'
+metadata:
+  internal: true
 ---
 
 # Generate release announcements

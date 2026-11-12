@@ -6,6 +6,8 @@ description: >-
   in the same slice; regenerate generated docs. Lifecycle composition: Pick when
   behavior and docs change together; Roast proves docs; Brew is the final docs
   gate.
+metadata:
+  internal: true
 ---
 # Update Docs
 

@@ -6,6 +6,8 @@ description: >-
   verify-ui-changes captures evidence, or when asked to "attach screenshots to the PR",
   "upload images to GitHub", or "put the recording on the PR". Also use when
   /opt/cursor/artifacts/ is missing or read-only.
+metadata:
+  internal: true
 ---
 
 # Attach PR media

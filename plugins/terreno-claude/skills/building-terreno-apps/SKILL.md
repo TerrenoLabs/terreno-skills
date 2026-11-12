@@ -4,6 +4,8 @@ description: >-
   Complete guide for building Terreno full-stack Expo apps with @terreno/ui,
   Expo Router, and @terreno/rtk. Covers layout, forms, navigation, theming,
   screen patterns, and when to use Expo Go vs custom builds.
+metadata:
+  internal: true
 ---
 # Building Terreno Apps
 

@@ -6,14 +6,100 @@
   },
   "description": "Public marketplace for Terreno: agentic SDLC planning and execution plugins.",
   "version": "2.13.0",
-  "metadata": {
-    "pluginRoot": "plugins"
-  },
   "plugins": [
     {
       "name": "terreno",
       "source": "./plugins/terreno-claude",
       "description": "Terreno lifecycle (Grow, Pick/Roast, Brew, Taste), goal-driven scans (Aim, Sweep, Sift, Plot, Track), app-building, documentation, deployment, and verification workflows."
+    },
+    {
+      "name": "bundles",
+      "source": "./",
+      "strict": false,
+      "description": "One skill per bundle: lifecycle, scan, app, ship, design. Each carries its member skills as references.",
+      "skills": [
+        "./skills/lifecycle",
+        "./skills/scan",
+        "./skills/app",
+        "./skills/ship",
+        "./skills/design"
+      ]
+    },
+    {
+      "name": "terreno-lifecycle",
+      "source": "./",
+      "strict": false,
+      "description": "Subset of the terreno plugin. PRD seed, then bounded Grow → Pick ⇄ Roast → Brew → Taste, plus the Pick-Roast, planning, and taste-sweep outer loops.",
+      "skills": [
+        "./skills/terreno-prd",
+        "./skills/terreno-1-grow",
+        "./skills/terreno-2-pick",
+        "./skills/terreno-3-roast",
+        "./skills/terreno-4-brew",
+        "./skills/terreno-5-taste",
+        "./skills/terreno-pick-roast-loop",
+        "./skills/terreno-planning-loop",
+        "./skills/terreno-taste-sweep"
+      ]
+    },
+    {
+      "name": "terreno-scan",
+      "source": "./",
+      "strict": false,
+      "description": "Subset of the terreno plugin. Charter a measurable long-term goal, map-reduce the repository into findings (Aim → Sweep → Sift → Plot → Track), and drive each slice to a PR.",
+      "skills": [
+        "./skills/terreno-scan-1-aim",
+        "./skills/terreno-scan-2-sweep",
+        "./skills/terreno-scan-3-sift",
+        "./skills/terreno-scan-4-plot",
+        "./skills/terreno-scan-5-track",
+        "./skills/terreno-loop-campaign",
+        "./skills/terreno-loop-resident"
+      ]
+    },
+    {
+      "name": "terreno-app",
+      "source": "./",
+      "strict": false,
+      "description": "Subset of the terreno plugin. Backend, UI, data, schema, admin, and test conventions for building Terreno apps.",
+      "skills": [
+        "./skills/building-terreno-apps",
+        "./skills/terreno-backend-api",
+        "./skills/terreno-ui",
+        "./skills/terreno-data-fetching",
+        "./skills/generate-sdk",
+        "./skills/debug-syncdb-with-mcp",
+        "./skills/mongoose-schema-safety",
+        "./skills/mongo-index-review",
+        "./skills/building-admin-interfaces",
+        "./skills/backend-test-env",
+        "./skills/ai-prompt-governance"
+      ]
+    },
+    {
+      "name": "terreno-ship",
+      "source": "./",
+      "strict": false,
+      "description": "Subset of the terreno plugin. UI verification, PR evidence, docs, releases, upgrades, store assets, and GCP deploys.",
+      "skills": [
+        "./skills/verify-ui-changes",
+        "./skills/attach-pr-media",
+        "./skills/update-docs",
+        "./skills/generate-release-announcements",
+        "./skills/upgrading-terreno",
+        "./skills/store-assets",
+        "./skills/deploy-gcp"
+      ]
+    },
+    {
+      "name": "terreno-design",
+      "source": "./",
+      "strict": false,
+      "description": "Subset of the terreno plugin. Turn a Claude design into a Terreno implementation plan and Linear work.",
+      "skills": [
+        "./skills/design-blend",
+        "./skills/claude-design-to-linear"
+      ]
     }
   ]
 }

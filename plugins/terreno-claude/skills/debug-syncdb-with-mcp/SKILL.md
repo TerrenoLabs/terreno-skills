@@ -5,6 +5,8 @@ description: >-
   conflicts, cursor/stream drift, reconciliation, or offline behavior in a
   running Terreno app. Uses terreno-mcp-local to inspect, snapshot, compare,
   mutate, flush, merge, and repair SyncDB state.
+metadata:
+  internal: true
 ---
 # Debug SyncDB with MCP
 

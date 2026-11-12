@@ -6,6 +6,8 @@ description: >-
   custom screens, AdminScreenRouter, AdminProvider widgets, admin-spa routes,
   or operator tools. Covers where models vs custom screens vs platform tools go.
   Not for product (non-admin) Expo screens — use building-terreno-apps.
+metadata:
+  internal: true
 ---
 # Building Admin Interfaces
 

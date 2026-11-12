@@ -8,6 +8,8 @@ description: >-
   logging/tracing, and a testing checklist. Lifecycle: Grow for prompt-contract
   decisions, Pick for implementation, Roast for independent prompt-behavior
   verification.
+metadata:
+  internal: true
 ---
 # AI Prompt Governance — `@terreno/ai`
 

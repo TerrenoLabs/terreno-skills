@@ -6,6 +6,8 @@ description: >-
   custom actions, and a @terreno/ui component mapping, then hand off to the
   Pick/Roast inner loop. Use when the input to Grow is a design; not for
   designs with no Terreno backend or UI.
+metadata:
+  internal: true
 ---
 
 # Design Blend

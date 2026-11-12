@@ -2,7 +2,18 @@
   "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
   "groupings": [
     {
-      "description": "PRD seed, then bounded Grow → Pick/Roast inner loop → Brew → Taste, plus continuous Pick-Roast, planning, and taste-sweep outer loops.",
+      "description": "One install per part of Terreno. Each bundle carries its member skills as references.",
+      "skills": [
+        "lifecycle",
+        "scan",
+        "app",
+        "ship",
+        "design"
+      ],
+      "title": "Bundles"
+    },
+    {
+      "description": "PRD seed, then bounded Grow → Pick ⇄ Roast → Brew → Taste, plus the Pick-Roast, planning, and taste-sweep outer loops.",
       "skills": [
         "terreno-prd",
         "terreno-1-grow",
@@ -17,71 +28,7 @@
       "title": "Lifecycle"
     },
     {
-      "description": "Backend, UI, data, and schema conventions for Terreno apps.",
-      "skills": [
-        "terreno-backend-api",
-        "model-router-actions",
-        "terreno-ui",
-        "terreno-data-fetching",
-        "debug-syncdb-with-mcp",
-        "mongoose-schema-safety",
-        "mongo-index-review",
-        "generate-sdk",
-        "building-terreno-apps",
-        "building-admin-interfaces",
-        "backend-test-env",
-        "ai-prompt-governance"
-      ],
-      "title": "Terreno apps"
-    },
-    {
-      "description": "Read architecture docs first; write and regenerate them in the same slice.",
-      "skills": [
-        "update-docs",
-        "update-agent-docs",
-        "docs-audit",
-        "improve-codebase-architecture",
-        "improve-rulesync",
-        "build-terreno-app",
-        "design-blend"
-      ],
-      "title": "Docs and architecture"
-    },
-    {
-      "description": "Review, verification, issue, release, and deploy workflows.",
-      "skills": [
-        "create-github-issue",
-        "implement-ready-for-dev",
-        "respond-to-review",
-        "verify-ui-changes",
-        "attach-pr-media",
-        "accessibility-testing",
-        "review-chart-visuals",
-        "work-github-issues",
-        "fix-conflicts",
-        "release",
-        "generate-release-announcements",
-        "update-dependencies",
-        "upgrading-terreno",
-        "deploy-gcp",
-        "deploy-vercel"
-      ],
-      "title": "GitHub and shipping"
-    },
-    {
-      "description": "Frontier, triage, promote, item, and review skills for the roadmap.",
-      "skills": [
-        "roadmap-frontier",
-        "roadmap-item",
-        "roadmap-promote",
-        "roadmap-review",
-        "roadmap-triage",
-        "claude-design-to-linear"
-      ],
-      "title": "Roadmap"
-    },
-    {
-      "description": "Charter a measurable long-term goal, map-reduce the repository into findings, and drive each routed PR through the lifecycle.",
+      "description": "Charter a measurable long-term goal, map-reduce the repository into findings (Aim → Sweep → Sift → Plot → Track), and drive each slice to a PR.",
       "skills": [
         "terreno-scan-1-aim",
         "terreno-scan-2-sweep",
@@ -94,18 +41,42 @@
       "title": "Code scans"
     },
     {
-      "description": "Non-conflicting Expo deployment and platform workflows.",
+      "description": "Backend, UI, data, schema, admin, and test conventions for building Terreno apps.",
       "skills": [
-        "expo-api-routes",
-        "expo-cicd-workflows",
-        "expo-deployment",
-        "expo-dev-client",
-        "store-assets",
-        "track-upstream-expo",
-        "upgrading-expo",
-        "use-dom"
+        "building-terreno-apps",
+        "terreno-backend-api",
+        "terreno-ui",
+        "terreno-data-fetching",
+        "generate-sdk",
+        "debug-syncdb-with-mcp",
+        "mongoose-schema-safety",
+        "mongo-index-review",
+        "building-admin-interfaces",
+        "backend-test-env",
+        "ai-prompt-governance"
       ],
-      "title": "Expo and native"
+      "title": "Terreno apps"
+    },
+    {
+      "description": "UI verification, PR evidence, docs, releases, upgrades, store assets, and GCP deploys.",
+      "skills": [
+        "verify-ui-changes",
+        "attach-pr-media",
+        "update-docs",
+        "generate-release-announcements",
+        "upgrading-terreno",
+        "store-assets",
+        "deploy-gcp"
+      ],
+      "title": "Verify and ship"
+    },
+    {
+      "description": "Turn a Claude design into a Terreno implementation plan and Linear work.",
+      "skills": [
+        "design-blend",
+        "claude-design-to-linear"
+      ],
+      "title": "Design handoff"
     }
   ],
   "notGrouped": "bottom"

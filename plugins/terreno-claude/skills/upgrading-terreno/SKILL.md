@@ -4,6 +4,8 @@ description: >-
   Upgrade Terreno lockstep @terreno/* packages. Trigger with "upgrade Terreno",
   "bump @terreno packages", "update to the latest Terreno", or "upgrade terreno version".
 targets: ['*']
+metadata:
+  internal: true
 ---
 
 # Upgrade Terreno

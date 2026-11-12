@@ -7,6 +7,8 @@ description: >-
   and Taste after a UI-affecting review/CI fix.
 claudecode:
   model: haiku
+metadata:
+  internal: true
 ---
 
 # Verify UI Changes

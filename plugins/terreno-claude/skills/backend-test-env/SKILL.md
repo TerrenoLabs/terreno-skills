@@ -6,6 +6,8 @@ description: >-
   toggles. Covers the preload contract, `setupEnvironment()`, and safe mutation
   patterns. Lifecycle composition: Pick when writing these tests; Roast when
   independently reproducing env-sensitive behavior.
+metadata:
+  internal: true
 ---
 # Backend Test — `process.env` Contract
 

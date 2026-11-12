@@ -3,9 +3,15 @@
 Install from GitHub with the skills CLI:
 
 ```bash
-npx skills add TerrenoLabs/terreno
-npx skills add TerrenoLabs/terreno --skill terreno-1-grow
+npx skills add TerrenoLabs/terreno-skills
+npx skills add TerrenoLabs/terreno-skills --skill lifecycle
+npx skills add TerrenoLabs/terreno-skills --skill terreno-1-grow
 ```
+
+`app`, `design`, `lifecycle`, `scan`, and `ship` are bundles: each is one skill whose
+`references/` holds a copy of its member skills. They are generated from
+[`../bundles.json`](../bundles.json) by `python3 .github/scripts/bundles.py`; edit the
+member skill, never the copy.
 
 This directory is generated. Canonical sources:
 

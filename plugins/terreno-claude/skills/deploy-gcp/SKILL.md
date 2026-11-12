@@ -2,6 +2,8 @@
 name: deploy-gcp
 description: Deploy a Terreno app to GCP — Cloud Run backend and GCS+CDN static web. Trigger phrases include "deploy to GCP", "deploy to Cloud Run", and "ship the backend".
 targets: ['*']
+metadata:
+  internal: true
 ---
 
 # Deploy to GCP

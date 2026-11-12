@@ -1,6 +1,8 @@
 ---
 name: loop-resident
 description: Run a scan campaign as a resident session — keep working toward the goal, open PR-sized slices routed to named reviewers, and heartbeat over every open PR to answer review comments, fix failing CI, and land merges, until the metric hits target or a human decision is required. Use when asked to keep a goal running continuously, leave a scan going in the background, watch and respond to campaign PRs, or run the scan loop; not for a single bounded round.
+metadata:
+  internal: true
 ---
 
 # Scan loop (resident driver)

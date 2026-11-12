@@ -1,6 +1,8 @@
 ---
 name: scan-2-sweep
 description: Run an approved scan charter across the repository — execute detection rules, shard the hits deterministically, and map fresh parallel workers over the shards into schema-valid candidate findings. Use after a scan charter is approved, or to re-sweep a later campaign round; not for shaping goals, ranking findings, or writing code.
+metadata:
+  internal: true
 ---
 
 # Sweep — shard and map

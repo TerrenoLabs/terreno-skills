@@ -1,6 +1,8 @@
 ---
 name: pick-roast-loop
 description: Drive an approved plan through every Pick–Roast cycle until all tasks pass or a genuine human decision is required. Continue through recoverable engineering failures, keep a complete run ledger, and when input is required present the overall state, completed work and evidence, options, recommendation, and exact question. Not for Grow, Brew, Taste, or CI monitoring.
+metadata:
+  internal: true
 ---
 
 # Pick–Roast loop (outer recovery driver)

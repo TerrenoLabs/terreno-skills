@@ -8,6 +8,8 @@ description: >-
   Use when adding models, routes, auth, or server-side logic in Terreno apps.
   Lifecycle composition: Grow for API shape, Pick for implementation, Roast for
   API/integration proof.
+metadata:
+  internal: true
 ---
 # Terreno Backend API
 

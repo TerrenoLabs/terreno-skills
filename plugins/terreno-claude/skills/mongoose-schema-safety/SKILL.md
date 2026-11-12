@@ -5,6 +5,8 @@ description: >-
   fields, creating a new model, adding indexes, or writing a backfill migration.
   Provides the five-type pattern, risk matrix, type file checklist, and rollout
   safety steps for Terreno backends.
+metadata:
+  internal: true
 ---
 # Mongoose Schema Safety — Terreno
 
