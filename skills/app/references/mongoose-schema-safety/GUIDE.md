@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/mongoose-schema-safety/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `mongoose-schema-safety` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/mongoose-schema-safety/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Mongoose Schema Safety — Terreno
 
 Typical Terreno apps keep models under `backend/src/models/` and types under `backend/src/types/models/`. The Terreno monorepo also uses `example-backend/` and `@terreno/ai` — adjust paths below to match your repo.

@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/design-blend/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `design-blend` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/design-blend/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Design Blend
 
 Use this skill when the work starts from a Claude design (a design file, an HTML handoff

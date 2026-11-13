@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/claude-design-to-linear/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `claude-design-to-linear` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/claude-design-to-linear/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Claude Design to Linear
 
 Convert a Claude design into actionable Linear projects and issues. Each project's `IP:`

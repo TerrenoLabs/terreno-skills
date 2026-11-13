@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-scan-2-sweep/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-scan-2-sweep` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-scan-2-sweep/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Sweep — shard and map
 
 Execute the approved charter across the repository and return raw candidate findings with

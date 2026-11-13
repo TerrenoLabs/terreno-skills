@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/building-terreno-apps/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `building-terreno-apps` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/building-terreno-apps/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Building Terreno Apps
 
 Use this skill when building or refactoring screens in a Terreno Expo app (`example-frontend`, `admin-spa`, or a consumer app using `@terreno/ui` + `@terreno/rtk`).

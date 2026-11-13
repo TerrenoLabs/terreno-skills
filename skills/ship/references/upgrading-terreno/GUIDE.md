@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/upgrading-terreno/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `upgrading-terreno` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/upgrading-terreno/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Upgrade Terreno
 
 Perform a lockstep `@terreno/*` upgrade. Human-facing twin: `docs/how-to/upgrade-terreno.md`. Ordering detail: [references/ordering.md](references/ordering.md).

@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/building-admin-interfaces/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `building-admin-interfaces` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/building-admin-interfaces/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Building Admin Interfaces
 
 Use this skill when the work is an **admin** surface: `/admin/**`, `/console`,

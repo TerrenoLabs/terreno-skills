@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/mongo-index-review/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `mongo-index-review` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/mongo-index-review/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Mongo index review
 
 Find every query a scope issues, decide which index serves it, and report the

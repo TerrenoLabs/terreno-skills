@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-1-grow/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-1-grow` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-1-grow/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Grow — shape
 
 Turn a request, ticket, or specification into approved artifacts a fresh Pick agent can

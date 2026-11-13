@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/attach-pr-media/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `attach-pr-media` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/attach-pr-media/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Attach PR media
 
 Put local screenshots and videos on a pull request so reviewers see them inline.

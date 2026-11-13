@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-pick-roast-loop/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-pick-roast-loop` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-pick-roast-loop/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Pick–Roast loop (outer recovery driver)
 
 Drive an **approved** task list through implementation and independent proof. This is

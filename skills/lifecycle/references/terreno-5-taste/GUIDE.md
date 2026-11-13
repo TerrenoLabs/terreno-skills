@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-5-taste/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-5-taste` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-5-taste/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Taste — react
 
 Observe current external state, wait until review bots and product CI on this head are

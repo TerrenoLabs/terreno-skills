@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-scan-5-track/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-scan-5-track` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-scan-5-track/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Track — measure and decide
 
 A campaign is only working if the number moved. Track re-measures the goal metric,

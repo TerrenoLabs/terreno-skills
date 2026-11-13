@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-2-pick/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-2-pick` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-2-pick/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Pick — build
 
 Implement one approved slice carefully, then continue the pick-roast inner loop.

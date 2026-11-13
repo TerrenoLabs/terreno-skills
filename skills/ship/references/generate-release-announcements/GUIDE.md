@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/generate-release-announcements/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `generate-release-announcements` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/generate-release-announcements/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Generate release announcements
 
 Create a source-controlled `terreno.announcement-pack/v1` directory from release notes. Human reference: `docs/reference/announcement-release-packs.md` in Terreno or the published Terreno announcement release-pack reference.

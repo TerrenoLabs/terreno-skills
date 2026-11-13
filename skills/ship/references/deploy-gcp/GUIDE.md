@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/deploy-gcp/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `deploy-gcp` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/deploy-gcp/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Deploy to GCP
 
 Deploy `example-backend` (or a bootstrapped `backend/`) to Cloud Run and the web export to GCS + CDN.

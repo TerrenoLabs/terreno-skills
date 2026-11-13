@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/generate-sdk/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `generate-sdk` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/generate-sdk/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Generate Frontend SDK
 
 Regenerates `example-frontend/store/openApiSdk.ts` from the backend OpenAPI spec via RTK Query codegen.

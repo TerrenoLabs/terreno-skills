@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/ai-prompt-governance/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `ai-prompt-governance` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/ai-prompt-governance/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # AI Prompt Governance — `@terreno/ai`
 
 `@terreno/ai` is a backend-only, provider-agnostic AI layer built on the Vercel AI SDK. Consuming apps inject a `LanguageModel` (Google, Anthropic, OpenAI, etc.) and call `AIService` methods. All requests are logged through the `AIRequest` model.

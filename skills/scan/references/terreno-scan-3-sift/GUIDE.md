@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-scan-3-sift/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-scan-3-sift` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-scan-3-sift/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Sift — reduce
 
 Turn a pile of worker candidates into a short, ranked, defensible findings list. A

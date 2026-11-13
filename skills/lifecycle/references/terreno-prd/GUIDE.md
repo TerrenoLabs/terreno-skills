@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-prd/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-prd` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-prd/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # PRD — seed
 
 Interview the person who owns the app, then write a full product PRD that Grow can shape

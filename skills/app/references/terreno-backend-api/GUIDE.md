@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-backend-api/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-backend-api` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-backend-api/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Terreno Backend API
 
 Use this skill when building server-side APIs for Terreno apps. Terreno uses **Express + Mongoose** (`@terreno/api`), not Expo API routes (`+api.ts` on EAS Hosting).

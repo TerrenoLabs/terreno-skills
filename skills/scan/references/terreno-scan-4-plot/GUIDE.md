@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-scan-4-plot/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-scan-4-plot` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-scan-4-plot/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Plot — findings to IPs and tasks
 
 A findings report is not work. Plot converts ranked findings into ordered, PR-sized

@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-4-brew/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-4-brew` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-4-brew/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Brew — submit
 
 Move one verified implementation into review, wait for async review bots on that head,

@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/verify-ui-changes/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `verify-ui-changes` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/verify-ui-changes/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Verify UI Changes
 
 Use this skill automatically whenever a task changes UI behavior, UI layout, visual styling, component stories, navigation screens, user-visible copy, or any full-stack feature with a frontend surface.

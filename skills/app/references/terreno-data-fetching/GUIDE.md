@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-data-fetching/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-data-fetching` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-data-fetching/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Terreno Data Fetching
 
 **You MUST use this skill for ANY networking work in Terreno apps.** Use syncdb

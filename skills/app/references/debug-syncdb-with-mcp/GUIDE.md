@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/debug-syncdb-with-mcp/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `debug-syncdb-with-mcp` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/debug-syncdb-with-mcp/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Debug SyncDB with MCP
 
 Use the fixed SyncDB MCP tools instead of arbitrary `evaluate` snippets.

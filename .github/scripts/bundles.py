@@ -116,11 +116,23 @@ picker grouped by the same bundles.
 """
 
 
-def guide(member):
+def relink(text, members):
+    """Point sibling-skill links at the bundled guide, which replaces SKILL.md."""
+    return re.sub(
+        r"\]\(\.\./([A-Za-z0-9._-]+)/SKILL\.md",
+        lambda match: f"](../{match.group(1)}/{GUIDE}" if match.group(1) in members else match.group(0),
+        text,
+    )
+
+
+def guide(member, members):
     _, body = split_frontmatter((SKILLS / member / "SKILL.md").read_text())
     return (
         f"<!-- GENERATED copy of skills/{member}/SKILL.md. Do not edit here. -->\n\n"
-        + body.lstrip("\n")
+        f"> Bundled copy of the `{member}` skill. Its skill directory (`<skill-dir>`, \"this\n"
+        f"> skill's folder\") is the folder holding this guide, `references/{member}/` inside\n"
+        f"> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.\n\n"
+        + relink(body.lstrip("\n"), members)
     )
 
 
@@ -146,7 +158,15 @@ def bundle_files(repo, bundle):
                 continue
             relative = path.relative_to(source)
             if relative.as_posix() == "SKILL.md":
-                files[f"references/{member}/{GUIDE}"] = (guide(member).encode(), False)
+                files[f"references/{member}/{GUIDE}"] = (
+                    guide(member, bundle["skills"]).encode(),
+                    False,
+                )
+            elif path.suffix == ".md":
+                files[f"references/{member}/{relative.as_posix()}"] = (
+                    relink(path.read_text(), bundle["skills"]).encode(),
+                    is_executable(path),
+                )
             else:
                 files[f"references/{member}/{relative.as_posix()}"] = (
                     path.read_bytes(),

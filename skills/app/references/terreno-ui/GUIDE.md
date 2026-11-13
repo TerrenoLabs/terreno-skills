@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-ui/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-ui` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-ui/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # @terreno/ui
 
 `@terreno/ui` is Terreno's universal (iOS, Android, web) component library. Start with existing components before creating new ones. For full screen structure and navigation, see `building-terreno-apps`.

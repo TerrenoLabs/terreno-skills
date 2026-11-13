@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-loop-campaign/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-loop-campaign` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-loop-campaign/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Scan campaign (outer driver)
 
 Not a stage. The five scan stages stay Aim, Sweep, Sift, Plot, Track. This skill walks

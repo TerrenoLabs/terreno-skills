@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-loop-resident/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-loop-resident` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-loop-resident/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Scan loop (resident driver)
 
 One session, running until the goal is met. It alternates between **making progress** —

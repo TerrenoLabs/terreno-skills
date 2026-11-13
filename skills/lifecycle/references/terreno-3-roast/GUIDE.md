@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-3-roast/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-3-roast` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-3-roast/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Roast — prove
 
 Roast is the authoritative stage-level verifier for the **current task**. It does not

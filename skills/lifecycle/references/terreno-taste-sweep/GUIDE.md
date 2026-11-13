@@ -1,10 +1,14 @@
 <!-- GENERATED copy of skills/terreno-taste-sweep/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-taste-sweep` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-taste-sweep/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Taste sweep — drive broken PRs to mergeable
 
 Find every open non-draft PR you authored that is currently broken (merge conflict,
 failing product-CI job, or unanswered review-bot thread) and drive each one by repeatedly invoking sibling skill
-[`terreno-5-taste`](../terreno-5-taste/SKILL.md). Taste performs one reactive iteration
+[`terreno-5-taste`](../terreno-5-taste/GUIDE.md). Taste performs one reactive iteration
 and exits; this skill **is** the outer loop, one instance per PR.
 
 Read the shared [`lifecycle contract`](references/lifecycle-contract.md),

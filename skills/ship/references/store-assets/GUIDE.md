@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/store-assets/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `store-assets` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/store-assets/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Store Assets
 
 One pipeline for store listing assets in a Terreno/Expo repo. Each step is a `bun run` script

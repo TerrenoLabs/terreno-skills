@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-scan-1-aim/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-scan-1-aim` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-scan-1-aim/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Aim — charter the goal
 
 Turn "make the codebase better at X" into a charter a fresh Sweep agent can execute

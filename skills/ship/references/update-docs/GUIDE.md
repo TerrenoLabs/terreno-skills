@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/update-docs/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `update-docs` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/update-docs/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Update Docs
 
 Use whenever behavior, public API, architecture, or operator workflow changes. Docs are

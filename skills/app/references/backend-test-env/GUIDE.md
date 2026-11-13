@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/backend-test-env/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `backend-test-env` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/backend-test-env/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Backend Test — `process.env` Contract
 
 Bun's test runner preloads a per-package setup file (configured in each package's `bunfig.toml` under `[test].preload`):

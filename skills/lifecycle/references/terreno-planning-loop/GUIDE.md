@@ -1,5 +1,9 @@
 <!-- GENERATED copy of skills/terreno-planning-loop/SKILL.md. Do not edit here. -->
 
+> Bundled copy of the `terreno-planning-loop` skill. Its skill directory (`<skill-dir>`, "this
+> skill's folder") is the folder holding this guide, `references/terreno-planning-loop/` inside
+> the bundle, so `scripts/`, `references/`, `examples/`, and `agents/` paths resolve from here.
+
 # Planning loop (outer driver)
 
 Not a stage. The five stages stay Grow, Pick, Roast, Brew, Taste. This skill
