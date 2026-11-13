@@ -1,6 +1,8 @@
 ---
 name: 1-grow
 description: Research, clarify, shape, and approve an implementation-ready IP and task list. Use whenever the user asks to plan, shape, spec, or scope substantial work ("help me plan X", "how should we build Y") or to revise an existing plan; not for implementation or PR operations.
+metadata:
+  internal: true
 ---
 
 # Grow — shape

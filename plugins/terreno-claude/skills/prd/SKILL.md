@@ -2,6 +2,8 @@
 name: prd
 description: Interview the app owner and write a full product requirements document (problem, why now, solution, user stories, measurable success metrics, constraints, rollout, out of scope), then publish it where the repository tracks work. Sized for one owner and one or two developers. Runs ahead of Grow; explicit invocation only.
 disable-model-invocation: true
+metadata:
+  internal: true
 ---
 
 # PRD — seed

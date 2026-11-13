@@ -8,6 +8,8 @@ description: >-
   application code.
   Lifecycle composition: Grow for data-flow shape, Pick for implementation, Roast
   for independent network/cache behavior proof.
+metadata:
+  internal: true
 ---
 # Terreno Data Fetching
 

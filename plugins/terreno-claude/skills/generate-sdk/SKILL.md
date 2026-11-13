@@ -15,6 +15,8 @@ description: >-
   compatibility.
 targets:
   - '*'
+metadata:
+  internal: true
 ---
 # Generate Frontend SDK
 

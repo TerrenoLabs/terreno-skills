@@ -6,6 +6,8 @@ description: >-
   criteria, and regression test steps. Updates existing projects instead of
   creating duplicates. Use when asked to break a design into Linear work; not
   for writing the IP itself (Grow, with design-blend) or for implementation.
+metadata:
+  internal: true
 ---
 
 # Claude Design to Linear

@@ -1,6 +1,8 @@
 ---
 name: 5-taste
 description: "Perform one reactive iteration against the PR's current head. Wait through provider CLI hooks until async review bots and product CI finish (GitHub CLI or CircleCI CLI in a watch loop), inspect every discovered host, mergeability, and reviews, act on what is actionable. Record failed tests from the last CI run. Before any push: fetch latest master (merge only when needed), re-verify those last-run failed tests locally, then run the repository's prepush script when present (otherwise lint and typecheck affected packages) in a no-context subagent, then push and watch CI. Emit state and exit. Invoked directly by a human, it repeats bounded reactions itself until PASS, BLOCKED, or FAIL and never hands a wait back to the human. Never leaves a pushed PR red: answers every review-bot comment and escalates to the human after three failed fix rounds."
+metadata:
+  internal: true
 ---
 
 # Taste — react

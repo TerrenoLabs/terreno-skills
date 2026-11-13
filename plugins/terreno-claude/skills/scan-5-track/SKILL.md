@@ -1,6 +1,8 @@
 ---
 name: scan-5-track
 description: Re-measure a scan campaign's goal metric after slices land, close or reopen findings with evidence, record the round, and choose the next move — more slices, a fresh sweep, or a report with one question. Use after a plotted slice finishes in the lifecycle or a round is dry; not for discovering findings, planning slices, or writing code.
+metadata:
+  internal: true
 ---
 
 # Track — measure and decide

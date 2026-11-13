@@ -1,0 +1,81 @@
+{
+  "repo": "TerrenoLabs/terreno-skills",
+  "bundles": [
+    {
+      "name": "lifecycle",
+      "title": "Lifecycle",
+      "summary": "PRD seed, then bounded Grow → Pick ⇄ Roast → Brew → Taste, plus the Pick-Roast, planning, and taste-sweep outer loops.",
+      "description": "Terreno delivery lifecycle in one skill: PRD, Grow (plan), Pick (build), Roast (prove), Brew (open the PR), Taste (react to CI and review), and the outer loops that drive them. Use when asked to plan, shape, spec, or scope work, implement an approved plan, verify a task, open or update a PR, fix failing CI or answer review bots, or run the planning loop.",
+      "skills": [
+        "terreno-prd",
+        "terreno-1-grow",
+        "terreno-2-pick",
+        "terreno-3-roast",
+        "terreno-4-brew",
+        "terreno-5-taste",
+        "terreno-pick-roast-loop",
+        "terreno-planning-loop",
+        "terreno-taste-sweep"
+      ]
+    },
+    {
+      "name": "scan",
+      "title": "Code scans",
+      "summary": "Charter a measurable long-term goal, map-reduce the repository into findings (Aim → Sweep → Sift → Plot → Track), and drive each slice to a PR.",
+      "description": "Terreno goal-driven code scans in one skill: Aim (charter a measurable goal), Sweep (detect), Sift (verify and rank), Plot (slice into PRs), Track (re-measure), plus the campaign and resident loops. Use when asked to scan a codebase for an outcome (build time, N+1 queries, accessibility, maintenance cost), set a long-term engineering goal, or keep scanning and fixing until a metric hits target.",
+      "skills": [
+        "terreno-scan-1-aim",
+        "terreno-scan-2-sweep",
+        "terreno-scan-3-sift",
+        "terreno-scan-4-plot",
+        "terreno-scan-5-track",
+        "terreno-loop-campaign",
+        "terreno-loop-resident"
+      ]
+    },
+    {
+      "name": "app",
+      "title": "Terreno apps",
+      "summary": "Backend, UI, data, schema, admin, and test conventions for building Terreno apps.",
+      "description": "Terreno app-building conventions in one skill: @terreno/api backends and modelRouter, @terreno/ui screens, data fetching and SyncDB, SDK generation, Mongoose schema and index safety, admin interfaces, backend test env, and AI prompt governance. Use when adding or changing models, routes, screens, forms, network requests, schemas, indexes, admin tools, or prompts in a Terreno app, or when debugging SyncDB state.",
+      "skills": [
+        "building-terreno-apps",
+        "terreno-backend-api",
+        "terreno-ui",
+        "terreno-data-fetching",
+        "generate-sdk",
+        "debug-syncdb-with-mcp",
+        "mongoose-schema-safety",
+        "mongo-index-review",
+        "building-admin-interfaces",
+        "backend-test-env",
+        "ai-prompt-governance"
+      ]
+    },
+    {
+      "name": "ship",
+      "title": "Verify and ship",
+      "summary": "UI verification, PR evidence, docs, releases, upgrades, store assets, and GCP deploys.",
+      "description": "Terreno verify-and-ship workflows in one skill: verify UI changes in a running app, attach screenshots and videos to a PR, keep docs in sync, generate release announcements, upgrade Terreno, produce App Store and Play Store assets, and deploy to GCP (Cloud Run and static web). Use when asked to verify a frontend change, attach PR media, update docs, announce a release, upgrade Terreno, make store screenshots, or deploy.",
+      "skills": [
+        "verify-ui-changes",
+        "attach-pr-media",
+        "update-docs",
+        "generate-release-announcements",
+        "upgrading-terreno",
+        "store-assets",
+        "deploy-gcp"
+      ]
+    },
+    {
+      "name": "design",
+      "title": "Design handoff",
+      "summary": "Turn a Claude design into a Terreno implementation plan and Linear work.",
+      "description": "Terreno design handoff in one skill: blend a Claude design file or handoff bundle into an implementation-ready Terreno plan (REST-first models, @terreno/ui mapping), and break a design into small Linear projects. Use when the input is a design file or handoff bundle to build with Terreno or to turn into Linear issues.",
+      "skills": [
+        "design-blend",
+        "claude-design-to-linear"
+      ]
+    }
+  ]
+}

@@ -6,6 +6,8 @@ description: >-
   asked to review Mongo indexes, find slow or unindexed queries, check a PR's
   queries for index coverage, or when an architecture review touches Mongoose
   models. Read-only: reports recommendations, never edits schemas.
+metadata:
+  internal: true
 ---
 
 # Mongo index review

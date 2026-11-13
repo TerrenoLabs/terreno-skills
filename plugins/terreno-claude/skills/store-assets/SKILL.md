@@ -11,6 +11,8 @@ description: >-
   listing assets", "feature graphic", "store banner", "Play Store icon", "512
   icon", or to launch an app in the simulator/emulator with an up-to-date dev
   client.
+metadata:
+  internal: true
 ---
 # Store Assets
 

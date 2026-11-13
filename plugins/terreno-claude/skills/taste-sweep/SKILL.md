@@ -1,6 +1,8 @@
 ---
 name: taste-sweep
 description: Outer loop over open PRs you authored that currently have a merge conflict, a failing product-CI job on any discovered host (GitHub Actions, CircleCI, Buildkite, and similar), or an unanswered review-bot thread. Isolates each PR and reinvokes Taste until mergeable or blocked. Skip drafts and already-green PRs.
+metadata:
+  internal: true
 ---
 
 # Taste sweep — drive broken PRs to mergeable
