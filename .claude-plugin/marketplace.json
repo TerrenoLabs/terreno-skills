@@ -61,11 +61,12 @@
       "name": "terreno-app",
       "source": "./",
       "strict": false,
-      "description": "Subset of the terreno plugin. Backend, UI, data, schema, admin, and test conventions for building Terreno apps.",
+      "description": "Subset of the terreno plugin. Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps.",
       "skills": [
         "./skills/building-terreno-apps",
         "./skills/terreno-backend-api",
         "./skills/terreno-ui",
+        "./skills/audit-color-schemes",
         "./skills/terreno-data-fetching",
         "./skills/generate-sdk",
         "./skills/debug-syncdb-with-mcp",

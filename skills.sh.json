@@ -41,11 +41,12 @@
       "title": "Code scans"
     },
     {
-      "description": "Backend, UI, data, schema, admin, and test conventions for building Terreno apps.",
+      "description": "Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps.",
       "skills": [
         "building-terreno-apps",
         "terreno-backend-api",
         "terreno-ui",
+        "audit-color-schemes",
         "terreno-data-fetching",
         "generate-sdk",
         "debug-syncdb-with-mcp",

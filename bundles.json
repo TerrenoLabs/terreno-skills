@@ -36,12 +36,13 @@
     {
       "name": "app",
       "title": "Terreno apps",
-      "summary": "Backend, UI, data, schema, admin, and test conventions for building Terreno apps.",
-      "description": "Terreno app-building conventions in one skill: @terreno/api backends and modelRouter, @terreno/ui screens, data fetching and SyncDB, SDK generation, Mongoose schema and index safety, admin interfaces, backend test env, and AI prompt governance. Use when adding or changing models, routes, screens, forms, network requests, schemas, indexes, admin tools, or prompts in a Terreno app, or when debugging SyncDB state.",
+      "summary": "Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps.",
+      "description": "Terreno app-building conventions in one skill: @terreno/api backends and modelRouter, @terreno/ui screens, light/dark mode and color-contrast audits, data fetching and SyncDB, SDK generation, Mongoose schema and index safety, admin interfaces, backend test env, and AI prompt governance. Use when adding or changing models, routes, screens, forms, network requests, schemas, indexes, admin tools, or prompts in a Terreno app, or when debugging SyncDB state.",
       "skills": [
         "building-terreno-apps",
         "terreno-backend-api",
         "terreno-ui",
+        "audit-color-schemes",
         "terreno-data-fetching",
         "generate-sdk",
         "debug-syncdb-with-mcp",
