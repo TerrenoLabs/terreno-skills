@@ -16,13 +16,14 @@
       "name": "bundles",
       "source": "./",
       "strict": false,
-      "description": "One skill per bundle: lifecycle, scan, app, ship, design. Each carries its member skills as references.",
+      "description": "One skill per bundle: lifecycle, scan, app, ship, design, dx. Each carries its member skills as references.",
       "skills": [
         "./skills/lifecycle",
         "./skills/scan",
         "./skills/app",
         "./skills/ship",
-        "./skills/design"
+        "./skills/design",
+        "./skills/dx"
       ]
     },
     {
@@ -61,11 +62,12 @@
       "name": "terreno-app",
       "source": "./",
       "strict": false,
-      "description": "Subset of the terreno plugin. Backend, UI, data, schema, admin, and test conventions for building Terreno apps.",
+      "description": "Subset of the terreno plugin. Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps.",
       "skills": [
         "./skills/building-terreno-apps",
         "./skills/terreno-backend-api",
         "./skills/terreno-ui",
+        "./skills/audit-color-schemes",
         "./skills/terreno-data-fetching",
         "./skills/generate-sdk",
         "./skills/debug-syncdb-with-mcp",
@@ -99,6 +101,23 @@
       "skills": [
         "./skills/design-blend",
         "./skills/claude-design-to-linear"
+      ]
+    },
+    {
+      "name": "terreno-dx",
+      "source": "./",
+      "strict": false,
+      "description": "Subset of the terreno plugin. Debug a running app over MCP, set up and write backend, frontend, and mobile tests, backfill regression suites and user guides, and wire social login and MCP servers.",
+      "skills": [
+        "./skills/debug-with-mcp",
+        "./skills/terreno-test-setup",
+        "./skills/terreno-backend-tests",
+        "./skills/terreno-frontend-tests",
+        "./skills/terreno-mobile-tests",
+        "./skills/backfill-regression",
+        "./skills/backfill-user-guide",
+        "./skills/bootstrap-mcp-server",
+        "./skills/set-up-social-login"
       ]
     }
   ]

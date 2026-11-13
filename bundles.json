@@ -36,12 +36,13 @@
     {
       "name": "app",
       "title": "Terreno apps",
-      "summary": "Backend, UI, data, schema, admin, and test conventions for building Terreno apps.",
-      "description": "Terreno app-building conventions in one skill: @terreno/api backends and modelRouter, @terreno/ui screens, data fetching and SyncDB, SDK generation, Mongoose schema and index safety, admin interfaces, backend test env, and AI prompt governance. Use when adding or changing models, routes, screens, forms, network requests, schemas, indexes, admin tools, or prompts in a Terreno app, or when debugging SyncDB state.",
+      "summary": "Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps.",
+      "description": "Terreno app-building conventions in one skill: @terreno/api backends and modelRouter, @terreno/ui screens, light/dark mode and color-contrast audits, data fetching and SyncDB, SDK generation, Mongoose schema and index safety, admin interfaces, backend test env, and AI prompt governance. Use when adding or changing models, routes, screens, forms, network requests, schemas, indexes, admin tools, or prompts in a Terreno app, or when debugging SyncDB state.",
       "skills": [
         "building-terreno-apps",
         "terreno-backend-api",
         "terreno-ui",
+        "audit-color-schemes",
         "terreno-data-fetching",
         "generate-sdk",
         "debug-syncdb-with-mcp",
@@ -75,6 +76,23 @@
       "skills": [
         "design-blend",
         "claude-design-to-linear"
+      ]
+    },
+    {
+      "name": "dx",
+      "title": "Terreno DX",
+      "summary": "Debug a running app over MCP, set up and write backend, frontend, and mobile tests, backfill regression suites and user guides, and wire social login and MCP servers.",
+      "description": "Terreno developer-experience workflows in one skill: debug a running app with terreno-local MCP tools, bootstrap Bun, Playwright, and Maestro test setups and write backend, frontend, and mobile tests, propose manual regression cases and end-user guide pages, bootstrap an MCP server, and set up social login. Use when debugging a Terreno app, setting up or writing tests, backfilling regression suites or user guides, adding an MCP server, or adding Google, GitHub, or Apple sign-in.",
+      "skills": [
+        "debug-with-mcp",
+        "terreno-test-setup",
+        "terreno-backend-tests",
+        "terreno-frontend-tests",
+        "terreno-mobile-tests",
+        "backfill-regression",
+        "backfill-user-guide",
+        "bootstrap-mcp-server",
+        "set-up-social-login"
       ]
     }
   ]

@@ -36,9 +36,10 @@ npx skills add TerrenoLabs/terreno-skills --skill lifecycle
 | --- | --- | --- | --- |
 | `lifecycle` | `npx skills add TerrenoLabs/terreno-skills --skill lifecycle` | 9 | PRD seed, then bounded Grow → Pick ⇄ Roast → Brew → Taste, plus the Pick-Roast, planning, and taste-sweep outer loops. |
 | `scan` | `npx skills add TerrenoLabs/terreno-skills --skill scan` | 7 | Charter a measurable long-term goal, map-reduce the repository into findings (Aim → Sweep → Sift → Plot → Track), and drive each slice to a PR. |
-| `app` | `npx skills add TerrenoLabs/terreno-skills --skill app` | 11 | Backend, UI, data, schema, admin, and test conventions for building Terreno apps. |
+| `app` | `npx skills add TerrenoLabs/terreno-skills --skill app` | 12 | Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps. |
 | `ship` | `npx skills add TerrenoLabs/terreno-skills --skill ship` | 7 | UI verification, PR evidence, docs, releases, upgrades, store assets, and GCP deploys. |
 | `design` | `npx skills add TerrenoLabs/terreno-skills --skill design` | 2 | Turn a Claude design into a Terreno implementation plan and Linear work. |
+| `dx` | `npx skills add TerrenoLabs/terreno-skills --skill dx` | 9 | Debug a running app over MCP, set up and write backend, frontend, and mobile tests, backfill regression suites and user guides, and wire social login and MCP servers. |
 <!-- bundles:end -->
 
 Other ways to take a slice:

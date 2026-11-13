@@ -8,7 +8,8 @@
         "scan",
         "app",
         "ship",
-        "design"
+        "design",
+        "dx"
       ],
       "title": "Bundles"
     },
@@ -41,11 +42,12 @@
       "title": "Code scans"
     },
     {
-      "description": "Backend, UI, data, schema, admin, and test conventions for building Terreno apps.",
+      "description": "Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps.",
       "skills": [
         "building-terreno-apps",
         "terreno-backend-api",
         "terreno-ui",
+        "audit-color-schemes",
         "terreno-data-fetching",
         "generate-sdk",
         "debug-syncdb-with-mcp",
@@ -77,6 +79,21 @@
         "claude-design-to-linear"
       ],
       "title": "Design handoff"
+    },
+    {
+      "description": "Debug a running app over MCP, set up and write backend, frontend, and mobile tests, backfill regression suites and user guides, and wire social login and MCP servers.",
+      "skills": [
+        "debug-with-mcp",
+        "terreno-test-setup",
+        "terreno-backend-tests",
+        "terreno-frontend-tests",
+        "terreno-mobile-tests",
+        "backfill-regression",
+        "backfill-user-guide",
+        "bootstrap-mcp-server",
+        "set-up-social-login"
+      ],
+      "title": "Terreno DX"
     }
   ],
   "notGrouped": "bottom"
