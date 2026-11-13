@@ -77,6 +77,23 @@
         "design-blend",
         "claude-design-to-linear"
       ]
+    },
+    {
+      "name": "dx",
+      "title": "Terreno DX",
+      "summary": "Debug a running app over MCP, set up and write backend, frontend, and mobile tests, backfill regression suites and user guides, and wire social login and MCP servers.",
+      "description": "Terreno developer-experience workflows in one skill: debug a running app with terreno-local MCP tools, bootstrap Bun, Playwright, and Maestro test setups and write backend, frontend, and mobile tests, propose manual regression cases and end-user guide pages, bootstrap an MCP server, and set up social login. Use when debugging a Terreno app, setting up or writing tests, backfilling regression suites or user guides, adding an MCP server, or adding Google, GitHub, or Apple sign-in.",
+      "skills": [
+        "debug-with-mcp",
+        "terreno-test-setup",
+        "terreno-backend-tests",
+        "terreno-frontend-tests",
+        "terreno-mobile-tests",
+        "backfill-regression",
+        "backfill-user-guide",
+        "bootstrap-mcp-server",
+        "set-up-social-login"
+      ]
     }
   ]
 }
