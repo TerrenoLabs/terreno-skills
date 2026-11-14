@@ -44,6 +44,7 @@
     {
       "description": "Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps.",
       "skills": [
+        "terreno-bootstrap",
         "building-terreno-apps",
         "terreno-backend-api",
         "terreno-ui",
@@ -91,7 +92,8 @@
         "backfill-regression",
         "backfill-user-guide",
         "bootstrap-mcp-server",
-        "set-up-social-login"
+        "set-up-social-login",
+        "terreno-bootstrap-eval"
       ],
       "title": "Terreno DX"
     }

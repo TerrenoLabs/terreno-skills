@@ -247,3 +247,10 @@ its shortened names cannot live in the shared stage files. `terreno-claude/` is 
 `taste-sweep`, the pre-Grow skill shortened to `prd`, published under the plugin name
 `terreno`. Regenerate it with
 `bun run skills:sync`; never hand-edit it.
+
+## Bootstrap and its regression eval
+
+| Skill | Contract |
+| --- | --- |
+| **Bootstrap** (`terreno-bootstrap`) | Take a new app from an empty directory to deployed in thirteen resumable stages (scaffold, feature, auth, roles, admin, theme, AI, consent, flags, tests and CI, agent tooling, deploy, handoff). Each stage has an exit check and an entry in `.terreno/bootstrap.json`; a stage without credentials ends `blocked`, never `pass`. Ends with `CHECKLIST.md` and an initial admin. |
+| **Bootstrap eval** (`terreno-bootstrap-eval`) | Per Terreno minor or major: a fresh builder gets a one-sentence beginner prompt and runs the bootstrap one stage at a time; each stage is timed and graded by a separate scorer against a rubric the builder never sees; the app and scorecard are published to `TerrenoLabs/terreno-bootstrap-runs` and compared with the previous version; skill gaps are fixed and the weak stages rerun in a bounded loop. |

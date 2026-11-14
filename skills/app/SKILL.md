@@ -9,7 +9,7 @@ description: "Terreno app-building conventions in one skill: @terreno/api backen
 
 Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps.
 
-This skill bundles 12 Terreno skills into one install. Each member is a
+This skill bundles 13 Terreno skills into one install. Each member is a
 complete guide under `references/<skill>/GUIDE.md`, with its own references, scripts, and
 agents beside it.
 
@@ -28,6 +28,7 @@ agents beside it.
 
 | Skill | Guide | Read when |
 | --- | --- | --- |
+| `terreno-bootstrap` | [references/terreno-bootstrap/GUIDE.md](references/terreno-bootstrap/GUIDE.md) | Take a new Terreno app from an empty directory to a deployed, production-shaped product in thirteen resumable stages: scaffold, first feature, secure auth, roles, admin, theme and responsive layout, AI chat, consent forms, feature flags, tests and CI with coverage, agent tooling, deploy, and a handoff checklist with an initial user. Use when asked to "make me an app with Terreno", "start a new Terreno project", "bootstrap a Terreno app", "build a todo app", or to run or resume one bootstrap stage. Not for adding a feature to an app that already shipped (use the app skills) or for work inside the Terreno monorepo. |
 | `building-terreno-apps` | [references/building-terreno-apps/GUIDE.md](references/building-terreno-apps/GUIDE.md) | Complete guide for building Terreno full-stack Expo apps with @terreno/ui, Expo Router, and @terreno/rtk. Covers layout, forms, navigation, theming, screen patterns, and when to use Expo Go vs custom builds. |
 | `terreno-backend-api` | [references/terreno-backend-api/GUIDE.md](references/terreno-backend-api/GUIDE.md) | Guidelines for creating backend APIs with @terreno/api on Express/Mongoose. Covers when to use Terreno backend vs Expo API routes, modelRouter CRUD, permissions, modelRouter actions (not app.get/app.post), OpenAPI generation, and the SDK codegen pipeline. Use when adding models, routes, auth, or server-side logic in Terreno apps. Lifecycle composition: Grow for API shape, Pick for implementation, Roast for API/integration proof. |
 | `terreno-ui` | [references/terreno-ui/GUIDE.md](references/terreno-ui/GUIDE.md) | Build UI with @terreno/ui — Terreno's React Native component library with a large component set and a three-layer theming system. Use when adding or reviewing layout, forms, tables, modals, feedback, or navigation chrome. Covers component selection, Box/Page patterns, theme props, and when NOT to use raw React Native primitives. Lifecycle composition: Grow for UI shape, Pick for implementation, Roast for UI conformance review. Not for backend APIs, RTK Query, or Expo Router setup. |
@@ -44,5 +45,5 @@ agents beside it.
 ## Installing a different slice
 
 Every member also installs alone
-(`npx skills add TerrenoLabs/terreno-skills --skill building-terreno-apps`), and `npx skills add TerrenoLabs/terreno-skills` opens a
+(`npx skills add TerrenoLabs/terreno-skills --skill terreno-bootstrap`), and `npx skills add TerrenoLabs/terreno-skills` opens a
 picker grouped by the same bundles.

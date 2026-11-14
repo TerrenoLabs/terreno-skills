@@ -39,6 +39,7 @@
       "summary": "Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps.",
       "description": "Terreno app-building conventions in one skill: @terreno/api backends and modelRouter, @terreno/ui screens, light/dark mode and color-contrast audits, data fetching and SyncDB, SDK generation, Mongoose schema and index safety, admin interfaces, backend test env, and AI prompt governance. Use when adding or changing models, routes, screens, forms, network requests, schemas, indexes, admin tools, or prompts in a Terreno app, or when debugging SyncDB state.",
       "skills": [
+        "terreno-bootstrap",
         "building-terreno-apps",
         "terreno-backend-api",
         "terreno-ui",
@@ -92,7 +93,8 @@
         "backfill-regression",
         "backfill-user-guide",
         "bootstrap-mcp-server",
-        "set-up-social-login"
+        "set-up-social-login",
+        "terreno-bootstrap-eval"
       ]
     }
   ]
