@@ -69,12 +69,19 @@ empty first tab.
 2. `modelRouter` with owner permissions, an owner query filter, and a `sync`
    scope. No hand-written Express routes; custom endpoints are model router
    actions.
-3. Regenerate both SDK files (skill `generate-sdk`).
+3. Regenerate both SDK files: the request hooks and the synced collection
+   hooks (`how-to/generate-the-client-sdk.md`, `reference/syncdb.md`). If the
+   scaffold has no script for the synced collection hooks, add one and pass
+   the generated collection list to the sync client. A skill that mentions
+   `@terreno/rtk` or Redux describes Terreno 57 or older: on 58 and later,
+   follow the docs instead and note it.
 4. Screens from `@terreno/ui` components, reading and writing through the
    synced collection hooks (`how-to/use-syncdb-correctly.md`,
    `how-to/build-list-detail-screens.md`; skills `terreno-ui`,
    `terreno-data-fetching`). Every screen has a loading, an empty, and an error
-   state, and a `testID` on each interactive element.
+   state, and a `testID` on each interactive element. Give a new record its
+   id on the client when you create it, so a record made offline can be
+   edited and deleted before the server has seen it.
 5. Seed a few example records for the seeded users.
 
 **Exit check:**
