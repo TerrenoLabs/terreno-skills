@@ -147,8 +147,19 @@ def rebuild_index(results):
     return entries
 
 
+def app_root(run_dir):
+    """The app is <run>/app, or the one directory the scaffold CLI made inside it."""
+    app = run_dir / "app"
+    if (app / ".git").exists():
+        return app
+    nested = [child for child in app.iterdir() if (child / ".git").exists()]
+    if len(nested) != 1:
+        sys.exit(f"expected one git repository in {app}, found {len(nested)}")
+    return nested[0]
+
+
 def publish(run_dir, repo):
-    app, eval_dir = run_dir / "app", run_dir / "eval"
+    app, eval_dir = app_root(run_dir), run_dir / "eval"
     meta = load_json(eval_dir / "run.json")
     if not meta or not meta.get("version") or not meta.get("runId"):
         sys.exit("eval/run.json needs version and runId")

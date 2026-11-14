@@ -12,8 +12,6 @@ description: >-
   real app (use terreno-bootstrap).
 metadata:
   internal: true
-metadata:
-  internal: true
 ---
 # Terreno bootstrap eval
 
@@ -56,7 +54,9 @@ failed on the previous patch.
 1. Pick a run id: `<version>-<UTC yyyymmddThhmm>`. Create an empty run
    directory outside any repository: `<run>/app/` for the builder and
    `<run>/eval/` for everything else. The builder is only ever told about
-   `<run>/app/`.
+   `<run>/app/`. The scaffold stage creates the app in `<run>/app/<app-name>/`;
+   from the second stage on, that directory is the app directory you give
+   builders, scorers, and the scripts.
 2. Record the environment in `<run>/eval/run.json`: version, run id, prompt
    id, the `terreno-skills` commit, the model each role runs on, and which
    credentials are present (names only, never values).

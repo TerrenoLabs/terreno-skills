@@ -27,19 +27,28 @@ uses change streams).
 1. `bunx create-terreno-app <app-name> --display-name "<App Name>"`. Pick the
    kebab-case name from the request ("a todo app" → `todo-app`). Pin a version
    with `create-terreno-app@<version>` when the user named one.
-2. `git init` if the directory is not a repository; commit the untouched
-   scaffold first so later diffs show only your work.
+   The CLI writes into a new `<app-name>/` directory under the current one;
+   that directory is the app root for every later stage.
+2. `git init` in the app root if it is not a repository, and commit the
+   untouched scaffold first so later diffs show only your work. The scaffold's
+   `.gitignore` may ignore `.terreno/`; change it so `.terreno/bootstrap.json`
+   is tracked and the rest stays ignored. Ignore the dev servers' log files
+   and `.expo/` too.
 3. Install in `backend/` and `frontend/`, start MongoDB, run the seed, start
    both processes. Follow `how-to/create-a-terreno-app.md` and the generated
-   `README.md`, in that order.
-4. Record the installed `@terreno/api` version as `terrenoVersion` in the
+   `README.md`, in that order. Wait for `/health` before any command that
+   calls the backend (the SDK generator, the seed check).
+4. If lint fails on the untouched scaffold, fix it with the package's own
+   `lint:fix` and note it; do not disable rules to get to green.
+5. Record the installed `@terreno/api` version as `terrenoVersion` in the
    state file.
 
 **Exit check:**
 
 - `GET /health` on the backend reports healthy.
 - On the web app, the seeded admin signs in and lands on the first screen.
-- `bun run lint` and the typecheck script pass in both packages.
+- Lint and the typecheck script (`compile` in a generated app) pass in both
+  packages.
 
 ---
 

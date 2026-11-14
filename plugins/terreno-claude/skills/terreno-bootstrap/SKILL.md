@@ -12,8 +12,6 @@ description: >-
   Terreno monorepo.
 metadata:
   internal: true
-metadata:
-  internal: true
 ---
 # Terreno bootstrap
 
