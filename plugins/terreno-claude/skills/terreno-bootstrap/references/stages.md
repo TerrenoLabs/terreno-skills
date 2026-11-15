@@ -169,25 +169,38 @@ server.
 
 **Goal:** an admin can manage the app's data and users from the admin panel.
 
-**Starts with:** the scaffold's admin backend plugin and admin routes in the
-frontend.
+**Starts with:** the scaffold's admin backend plugin and an admin index
+screen. Check what is really there before building on it: on 58.0 the index
+screen lists models but has no per-model routes, the admin plugin is
+registered without the app's access control, and the role-management routes
+are not mounted.
 
 **Do** (`how-to/admin-add-model.md`, `how-to/build-admin-screens.md`; skill
 `building-admin-interfaces`):
 
-1. Register the feature's model in the admin with useful list fields and a
-   default sort.
-2. Keep the admin entry point out of the navigation for non-admins and
-   redirect them if they type the URL.
-3. Let an admin give and remove the roles from stage 4 in the admin, so the
+1. Make the admin and the roles from stage 4 agree first: one rule decides
+   who may open the admin, and the server and the navigation both use it.
+   Give the admin plugin the app's access control, and grant each admin model
+   to the roles that should see it.
+2. Build the admin shell the way `how-to/build-admin-screens.md` describes
+   (provider, shell layout, home, and per-model list and form routes), not on
+   top of the scaffold's index screen.
+3. Register the feature's model in the admin with useful list fields and a
+   default sort. Hide internal fields (password hashes, sync bookkeeping).
+4. Keep the admin entry point out of the navigation for non-admins and
+   redirect them if they type the URL. A reload on an admin URL must stay
+   there for an admin.
+5. Let an admin give and remove the roles from stage 4 in the admin, so the
    seed is not the only way to hold one.
 
 **Exit check:**
 
 - The admin lists the feature's records, edits one, and the change shows in
   the owner's app.
-- A non-admin user cannot open the admin screens and gets 403 from the admin
-  API.
+- A non-admin user cannot open the admin screens and is refused by every
+  admin API route (403, or the status the installed version documents).
+- An admin gives another user a role in the admin, and that user can then do
+  what the role allows.
 
 ---
 
