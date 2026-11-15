@@ -275,13 +275,17 @@ app, and the acceptance is stored.
 **Starts with:** nothing wired in the frontend; read
 `explanation/consent-forms.md` first.
 
-**Do** (`explanation/consent-forms.md`, `reference/admin-backend.md` and
-`reference/admin-frontend.md` consent sections):
+**Do** (`explanation/consent-forms.md`, then the consent sections of
+`reference/api.md` and `reference/ui.md`):
 
-1. Register the consent plugin and seed two published forms: Terms of Service
-   and Privacy Policy, with short plain-language placeholder text marked as
-   needing legal review.
-2. Gate the app on outstanding consents after sign-in.
+1. Register the consent plugin and create two published forms: Terms of
+   Service and Privacy Policy, with short plain-language placeholder text
+   marked as needing legal review. Create them where production gets them
+   too, not only in the development seed, and record the development seed
+   users' acceptance so their sign-in is not stopped at the gate.
+2. Gate the app on outstanding consents after sign-in, with a way to sign out
+   from the gate. Note in `BOOTSTRAP_NOTES.md` whether the server also
+   refuses data requests from a user who has not accepted.
 3. Expose consent forms and responses in the admin.
 
 **Exit check:**
