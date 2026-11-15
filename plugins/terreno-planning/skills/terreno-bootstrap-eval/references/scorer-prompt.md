@@ -29,8 +29,13 @@ sections and the section for this stage. Score only this stage's criteria.
 
 **How to work:**
 
-1. Read the app's `README.md` and start it the way the README says. If that
-   fails, that is a finding; then start it however you can and continue.
+1. Read the app's `README.md` and start it the way the README says, with one
+   change: point the backend at a scratch database of your own
+   (`<database>-score-<stage>`, by overriding the database variable in the
+   environment, not by editing a file) and run the app's seed against it.
+   Your test data must never reach the builder's database, because later
+   stages screenshot it. If starting fails, that is a finding; then start it
+   however you can and continue.
 2. For each criterion, run the check and keep the proof: the command and its
    output, the HTTP status, or a screenshot path under
    `<run>/eval/evidence/<stage>/`.
