@@ -29,7 +29,7 @@ SECRET_PATTERNS = [
     re.compile(r"AIza[0-9A-Za-z_-]{30,}"),
     re.compile(r"gh[pousr]_[A-Za-z0-9]{30,}"),
     re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"),
-    re.compile(r"(?i)\b(BETTER_AUTH_SECRET|TOKEN_SECRET|SESSION_SECRET|REFRESH_TOKEN_SECRET|INITIAL_ADMIN_PASSWORD)\s*=\s*[^\s\"'<$]{12,}"),
+    re.compile(r"(?i)\b(BETTER_AUTH_SECRET|TOKEN_SECRET|SESSION_SECRET|REFRESH_TOKEN_SECRET|INITIAL_ADMIN_PASSWORD)[ \t]*[=:][ \t]*[\"']?(?=[^\s\"']*\d)(?=[^\s\"']*[a-z])[A-Za-z0-9+/=_-]{16,}"),
 ]
 REGRESSION_POINTS = 10
 REGRESSION_TIME = 1.5
