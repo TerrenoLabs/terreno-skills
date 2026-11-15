@@ -31,6 +31,8 @@ SECRET_PATTERNS = [
     re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"),
     re.compile(r"(?i)\b(BETTER_AUTH_SECRET|TOKEN_SECRET|SESSION_SECRET|REFRESH_TOKEN_SECRET|INITIAL_ADMIN_PASSWORD)[ \t]*[=:][ \t]*[\"']?(?=[^\s\"']*\d)(?=[^\s\"']*[a-z])[A-Za-z0-9+/=_-]{16,}"),
 ]
+# The app repository has no remote of its own, so pushes borrow gh's credentials.
+GH_AUTH = ("-c", "credential.helper=!gh auth git-credential")
 REGRESSION_POINTS = 10
 REGRESSION_TIME = 1.5
 
@@ -194,8 +196,8 @@ def publish(run_dir, repo):
     branch, pointer = f"runs/{meta['runId']}", f"v{minor}"
     url = f"https://github.com/{repo}.git"
     sha = run("git", "rev-parse", "HEAD", cwd=app, capture=True)
-    run("git", "push", "--quiet", url, f"HEAD:refs/heads/{branch}", cwd=app)
-    run("git", "push", "--quiet", "--force", url, f"HEAD:refs/heads/{pointer}", cwd=app)
+    run("git", *GH_AUTH, "push", "--quiet", url, f"HEAD:refs/heads/{branch}", cwd=app)
+    run("git", *GH_AUTH, "push", "--quiet", "--force", url, f"HEAD:refs/heads/{pointer}", cwd=app)
     meta.update({"appBranch": branch, "appSha": sha, "versionBranch": pointer})
     (eval_dir / "run.json").write_text(json.dumps(meta, indent=2) + "\n")
 
