@@ -60,8 +60,24 @@ def version_key(minor):
     return tuple(int(part) for part in minor.split("."))
 
 
+def local_secret_values(app):
+    """Values from the app's gitignored .env files: the secrets this run really uses."""
+    values = set()
+    for env_file in app.rglob(".env*"):
+        if "node_modules" in env_file.parts or env_file.name.endswith(".example") or not env_file.is_file():
+            continue
+        for line in env_file.read_text(errors="ignore").splitlines():
+            key, _, value = line.partition("=")
+            value = value.strip().strip("\"'")
+            if re.search(r"(?i)secret|password|key|token", key) and len(value) >= 12:
+                values.add(value)
+    return values
+
+
 def scan_for_secrets(app):
+    """Refuse committed env files, any real local secret, and secret-shaped values outside tests."""
     tracked = run("git", "ls-files", cwd=app, capture=True).splitlines()
+    real = local_secret_values(app)
     problems = []
     for rel in tracked:
         path = app / rel
@@ -71,6 +87,11 @@ def scan_for_secrets(app):
         if not path.is_file() or path.stat().st_size > 400_000:
             continue
         body = path.read_text(errors="ignore")
+        if any(value in body for value in real):
+            problems.append(f"{rel}: contains a value from a local .env file")
+            continue
+        if re.search(r"\.(test|spec)\.[jt]sx?$", rel):
+            continue
         for pattern in SECRET_PATTERNS:
             if pattern.search(body):
                 problems.append(f"{rel}: matches {pattern.pattern[:40]}")
