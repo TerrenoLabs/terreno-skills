@@ -84,7 +84,7 @@ Pass mark is the score below which the conductor runs a fix round.
 ### admin — weight 7, pass mark 80
 - 30 Admin lists the feature's records with sensible columns
 - 25 Admin edits a record and the owner sees the change
-- 25 Non-admin is refused by the admin API (403) and redirected from the admin screens
+- 25 Non-admin is refused by every admin API route (403, or 405 where the version documents that) and redirected from the admin screens
 - 10 Users are manageable in the admin, including giving and removing a role
 - 10 Admin link is absent from navigation for non-admins
 
