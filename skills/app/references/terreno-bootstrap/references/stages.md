@@ -303,16 +303,20 @@ app, and the acceptance is stored.
 **Goal:** one real capability is behind a feature flag that an admin can turn
 on without a deploy.
 
-**Starts with:** whatever flag support the scaffold registered; check before
-adding.
+**Starts with:** check whether the scaffold registered flag support before
+adding it; on 58.0 it did not, and the stage adds the flags package to the
+backend and the flag client to the frontend.
 
 **Do** (`how-to/add-feature-flags.md`, `reference/feature-flags.md`):
 
 1. Put the assistant from stage 7 (or, when it is blocked, another finished
    capability) behind a flag, checked on the server and in the client.
-2. Read the release notes for the installed version (`terreno docs notes`, or
-   the changelog at the version's tag). If the release added a capability that
-   suits this app, adopt it behind a second flag and name it in the notes.
+2. Read the release notes for the installed minor, from its `.0` release
+   through the installed patch (`terreno docs notes`, or the changelog at the
+   version's tag); a patch release alone rarely lists anything new. If the
+   minor added a capability that suits this app and no earlier stage used it,
+   adopt it behind a second flag. Either way, list in the notes what the
+   minor added and what you did with each item.
 
 **Exit check:**
 
