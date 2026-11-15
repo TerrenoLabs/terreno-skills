@@ -372,12 +372,20 @@ its first minute.
 **Do** (`how-to/set-up-terreno-mcp.md`, `how-to/install-agent-skills.md`,
 `how-to/debug-with-mcp.md`):
 
-1. Install the Terreno skills into the repository
-   (`npx skills add TerrenoLabs/terreno-skills`) and commit them.
+1. Install the Terreno skills into the repository without the interactive
+   picker (`npx skills add TerrenoLabs/terreno-skills --skill app --skill dx
+   --skill ship -y`, plus `--agent` for each editor the team uses) and commit
+   them.
 2. Bring `CLAUDE.md` and `AGENTS.md` up to date with what this app now has:
    its models, roles, flags, test commands, and the smoke command.
 3. Confirm both MCP servers start with the committed config and that the
-   local one can read this app's logs and database.
+   local one can read this app's logs and database. Resolve the hosted
+   server's address before trusting it; if it does not answer, record the
+   failure, and use the local server or a locally run copy of the published
+   server to prove docs search works (this proves the tooling, not the hosted
+   service, so the stage stays `blocked` on the hosted half).
+4. Point every doc link in `CLAUDE.md` and `AGENTS.md` at the docs for the
+   installed version's tag; the docs are not in the app.
 
 **Exit check:**
 
