@@ -107,10 +107,17 @@ and a security settings screen from the scaffold.
 
 1. Generate a random `BETTER_AUTH_SECRET` (and any other secret the env example
    lists) into the gitignored `.env`. No secret has a default in code.
-2. Password reset and email verification work end to end. Without a mail
-   provider, use the framework's development delivery and say so in the notes.
+2. Password reset and email verification work end to end. The scaffold sends
+   no mail and has no reset or verification screens: add the mail package
+   (`reference/comms.md`), pass its sender to the auth config, and add the
+   screens the mailed links open. Without a mail provider, write development
+   mail to a gitignored local file so a developer can open the link, wire the
+   production provider from environment variables, and say in the notes that
+   it was not exercised.
+   Use one password rule in the sign-up form and the server.
 3. Rate limiting stays on outside tests; set the proxy trust the deploy target
-   needs.
+   needs. The auth bucket is small: restart the backend between full browser
+   passes over sign-up, verify, and reset rather than raising the limit.
 4. Decide sign-up: open for a consumer app, closed for an internal tool. A
    todo app is open.
 5. Turn on two-factor in the security settings screen when the installed
