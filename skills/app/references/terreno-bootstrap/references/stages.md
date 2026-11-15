@@ -146,9 +146,10 @@ server.
 **Do** (`reference/api.md` permissions and access sections,
 `reference/account-security.md`):
 
-1. Name the roles the app needs. A todo app: `member` (own todos) and
-   `operator` (can read any user's todos for support, cannot edit them), plus
-   `admin`.
+1. List the roles the scaffold already seeds before naming any; do not reuse
+   one of their names for something else. Then name the roles the app needs.
+   A todo app: `member` (own todos) and `support` (can read any user's todos,
+   cannot edit them), plus the built-in admin roles.
 2. Enforce through permissions on routers and actions, never in the client
    alone.
 3. Hide controls the current role cannot use; the server check stays.
@@ -156,9 +157,10 @@ server.
 
 **Exit check:**
 
-- As `member`, a request for the operator-only route is 403.
-- As `operator`, the same request succeeds and a write to someone else's
-  record is 403.
+- As `member`, a request for the support-only route is refused (403, or the
+  status the installed version documents for a refused action).
+- As `support`, the same request succeeds and a write to someone else's
+  record is refused.
 - A backend test covers both.
 
 ---
@@ -177,6 +179,8 @@ frontend.
    default sort.
 2. Keep the admin entry point out of the navigation for non-admins and
    redirect them if they type the URL.
+3. Let an admin give and remove the roles from stage 4 in the admin, so the
+   seed is not the only way to hold one.
 
 **Exit check:**
 
