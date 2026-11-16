@@ -2,6 +2,7 @@
 """Upload a bootstrap eval run to the results repository and compare runs.
 
     publish_run.py <run-dir> --repo OWNER/NAME     upload the app and the eval folder
+    publish_run.py <run-dir> --repo OWNER/NAME --results-only   the eval folder only; rerun without it to add the app
     publish_run.py ci <run-dir> --repo OWNER/NAME  record the app commit's CI results
     publish_run.py compare --repo OWNER/NAME       newest run per version vs the previous version
 
@@ -164,7 +165,7 @@ def rebuild_index(results):
         lines.append(
             f"| {entry['version']} | [{entry['runId']}]({entry['minor']}/{entry['runId']}/) | "
             f"{entry['overallScore']} | {entry['closeness']} | {entry['totalMinutes']} | "
-            f"{', '.join(weak) or 'none'} | `{entry['appBranch']}` |"
+            f"{', '.join(weak) or 'none'} | {('`' + entry['appBranch'] + '`') if entry['appBranch'] else 'not uploaded'} |"
         )
     (results / "README.md").write_text("\n".join(lines) + "\n")
     return entries
@@ -181,24 +182,30 @@ def app_root(run_dir):
     return nested[0]
 
 
-def publish(run_dir, repo):
+def publish(run_dir, repo, results_only=False):
+    """Push the app branch and the results. With results_only, push the results
+    alone (for example when the token cannot push workflow files yet); run the
+    full publish later to add the app branch."""
     app, eval_dir = app_root(run_dir), run_dir / "eval"
     meta = load_json(eval_dir / "run.json")
     if not meta or not meta.get("version") or not meta.get("runId"):
         sys.exit("eval/run.json needs version and runId")
-    problems = scan_for_secrets(app)
-    if problems:
-        sys.exit("refusing to publish, the app has committed secrets:\n  " + "\n  ".join(problems))
-    if run("git", "status", "--porcelain", cwd=app, capture=True):
-        sys.exit("refusing to publish: the app has uncommitted changes")
-
     minor = minor_of(meta["version"])
     branch, pointer = f"runs/{meta['runId']}", f"v{minor}"
-    url = f"https://github.com/{repo}.git"
     sha = run("git", "rev-parse", "HEAD", cwd=app, capture=True)
-    run("git", *GH_AUTH, "push", "--quiet", url, f"HEAD:refs/heads/{branch}", cwd=app)
-    run("git", *GH_AUTH, "push", "--quiet", "--force", url, f"HEAD:refs/heads/{pointer}", cwd=app)
-    meta.update({"appBranch": branch, "appSha": sha, "versionBranch": pointer})
+
+    if results_only:
+        meta.update({"appBranch": None, "appSha": sha, "versionBranch": None})
+    else:
+        problems = scan_for_secrets(app)
+        if problems:
+            sys.exit("refusing to publish, the app has committed secrets:\n  " + "\n  ".join(problems))
+        if run("git", "status", "--porcelain", cwd=app, capture=True):
+            sys.exit("refusing to publish: the app has uncommitted changes")
+        url = f"https://github.com/{repo}.git"
+        run("git", *GH_AUTH, "push", "--quiet", url, f"HEAD:refs/heads/{branch}", cwd=app)
+        run("git", *GH_AUTH, "push", "--quiet", "--force", url, f"HEAD:refs/heads/{pointer}", cwd=app)
+        meta.update({"appBranch": branch, "appSha": sha, "versionBranch": pointer})
     (eval_dir / "run.json").write_text(json.dumps(meta, indent=2) + "\n")
 
     with tempfile.TemporaryDirectory() as workdir:
@@ -211,7 +218,8 @@ def publish(run_dir, repo):
         run("git", "add", "results", cwd=target)
         run("git", "commit", "--quiet", "-m", f"Add bootstrap eval run {meta['runId']}", cwd=target)
         run("git", "push", "--quiet", "origin", "HEAD:master", cwd=target)
-    print(f"app:     https://github.com/{repo}/tree/{branch} ({sha[:8]})")
+    if not results_only:
+        print(f"app:     https://github.com/{repo}/tree/{branch} ({sha[:8]})")
     print(f"results: https://github.com/{repo}/tree/master/results/{minor}/{meta['runId']}")
 
 
@@ -290,6 +298,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument("args", nargs="+")
     parser.add_argument("--repo", required=True)
+    parser.add_argument("--results-only", action="store_true", help="upload the eval folder without the app branch")
     parsed = parser.parse_args()
     command, rest = parsed.args[0], parsed.args[1:]
     if command == "compare":
@@ -299,7 +308,7 @@ def main():
             sys.exit("usage: publish_run.py ci <run-dir> --repo OWNER/NAME")
         record_ci(pathlib.Path(rest[0]).resolve(), parsed.repo)
     else:
-        publish(pathlib.Path(command).resolve(), parsed.repo)
+        publish(pathlib.Path(command).resolve(), parsed.repo, results_only=parsed.results_only)
 
 
 if __name__ == "__main__":

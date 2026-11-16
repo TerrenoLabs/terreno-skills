@@ -142,6 +142,11 @@ Actions run there), copies `<run>/eval/` to
 `results/index.json` and `results/README.md`. It refuses to publish an app
 that contains a `.env` file or a value matching a secret pattern.
 
+If the app push is refused (a token without the `workflow` scope cannot push
+`.github/workflows/`), publish the scores with `--results-only` and rerun
+without it once the token is fixed. Never strip the workflows to get the push
+through: CI on the uploaded commit is what the `tests-ci` score depends on.
+
 Then wait for the app branch's CI, and record each workflow's conclusion in
 the published `ci.json` (`publish_run.py ci <run> --repo ...`). CI green on
 the uploaded commit is part of the `tests-ci` score; update that score file
