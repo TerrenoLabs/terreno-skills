@@ -102,6 +102,11 @@ the exit check.
 5. **Record friction.** One line in `BOOTSTRAP_NOTES.md` whenever a doc was
    wrong, a command failed, or you had to guess. This file is how the next
    version of this skill and the docs get better.
+6. **Nothing waits forever.** Run servers in the background and wait for
+   their health URL with a deadline. Give every foreground command, browser
+   wait, and poll an explicit timeout (Playwright actions and `innerText()`
+   wait with no limit by default). A check that times out is a failure to
+   record and retry, not something to wait out.
 
 ## Blocked is a result
 
