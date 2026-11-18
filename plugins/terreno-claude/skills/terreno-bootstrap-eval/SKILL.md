@@ -160,8 +160,9 @@ python3 SKILL_DIR/scripts/publish_run.py compare --repo TerrenoLabs/terreno-boot
 
 Prints, for the newest run of each version against the previous version: the
 per-stage score change, the per-stage time change, and any stage that went
-from pass to fail or blocked. A drop of 10 points or a time increase of 50%
-on a stage is a regression; open the `terreno-skills` PR and the issue drafts
+from pass to fail. A pass that became fail, a drop of 10 points, or a time
+increase of 50% on a stage is a regression. A stage `blocked` on either side
+is listed without flags, never as a regression; open the `terreno-skills` PR and the issue drafts
 with that table at the top.
 
 ### 6. Iterate

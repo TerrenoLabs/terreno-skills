@@ -382,14 +382,16 @@ its first minute.
    local one can read this app's logs and database. Resolve the hosted
    server's address before trusting it; if it does not answer, record the
    failure, and use the local server or a locally run copy of the published
-   server to prove docs search works (this proves the tooling, not the hosted
-   service, so the stage stays `blocked` on the hosted half).
+   server to prove docs search works. This proves the tooling, not the hosted
+   service: note the hosted outage in the evidence and the checklist, but it
+   does not make the stage `blocked`, which is only for missing credentials.
 4. Point every doc link in `CLAUDE.md` and `AGENTS.md` at the docs for the
    installed version's tag; the docs are not in the app.
 
 **Exit check:**
 
-- A docs search returns results through the hosted server or the CLI.
+- A docs search returns results through the hosted server or the CLI (a
+  hosted outage is recorded in the evidence, and the stage can still pass).
 - With the app running, the last backend error and a database read come back
   through the local server or the CLI.
 - `CLAUDE.md` names the test and lint commands, and they are the ones that

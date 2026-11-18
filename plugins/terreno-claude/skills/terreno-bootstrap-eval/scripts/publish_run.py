@@ -30,10 +30,13 @@ SECRET_PATTERNS = [
     re.compile(r"AIza[0-9A-Za-z_-]{30,}"),
     re.compile(r"gh[pousr]_[A-Za-z0-9]{30,}"),
     re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"),
-    re.compile(r"(?i)\b(BETTER_AUTH_SECRET|TOKEN_SECRET|SESSION_SECRET|REFRESH_TOKEN_SECRET|INITIAL_ADMIN_PASSWORD)[ \t]*[=:][ \t]*[\"']?(?=[^\s\"']*\d)(?=[^\s\"']*[a-z])[A-Za-z0-9+/=_-]{16,}"),
+    re.compile(r"\b(?i:BETTER_AUTH_SECRET|TOKEN_SECRET|SESSION_SECRET|REFRESH_TOKEN_SECRET|INITIAL_ADMIN_PASSWORD)[ \t]*[=:][ \t]*[\"']?(?=[^\s\"']*\d)(?=[^\s\"']*[a-z])[A-Za-z0-9+/=_-]{16,}"),
 ]
 # The app repository has no remote of its own, so pushes borrow gh's credentials.
-GH_AUTH = ("-c", "credential.helper=!gh auth git-credential")
+# The empty entry clears any configured helpers (osxkeychain, store) so they
+# cannot answer first with a different GitHub identity.
+GH_AUTH = ("-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential")
+RESULTS_BRANCH = "master"
 REGRESSION_POINTS = 10
 REGRESSION_TIME = 1.5
 
@@ -63,6 +66,13 @@ def version_key(minor):
     return tuple(int(part) for part in minor.split("."))
 
 
+def run_order(entry):
+    """Run ids are <version>-<UTC yyyymmddThhmm>; order by version, then start time."""
+    version, _, started = entry["runId"].rpartition("-")
+    numbers = tuple(int(part) for part in re.findall(r"\d+", version.split("-")[0])[:3])
+    return (version_key(entry["minor"]), started, numbers)
+
+
 def local_secret_values(app):
     """Values from the app's gitignored .env files: the secrets this run really uses."""
     values = set()
@@ -70,8 +80,17 @@ def local_secret_values(app):
         if "node_modules" in env_file.parts or env_file.name.endswith(".example") or not env_file.is_file():
             continue
         for line in env_file.read_text(errors="ignore").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
             key, _, value = line.partition("=")
-            value = value.strip().strip("\"'")
+            key, value = key.strip().removeprefix("export ").strip(), value.strip()
+            if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", key):
+                continue
+            if value[:1] in ("'", '"'):
+                value = value[1:].split(value[0], 1)[0]
+            else:
+                value = re.split(r"\s#", value, maxsplit=1)[0].strip()
             if re.search(r"(?i)secret|password|key|token", key) and len(value) >= 12:
                 values.add(value)
     return values
@@ -105,8 +124,13 @@ def scan_for_secrets(app):
 def clone(repo, workdir):
     target = pathlib.Path(workdir) / "results"
     run("gh", "repo", "clone", repo, target, "--", "--quiet")
-    if run("git", "rev-parse", "--verify", "--quiet", "HEAD", cwd=target, check=False, capture=True) == "":
-        run("git", "checkout", "-b", "master", cwd=target)
+    remote = run("git", "ls-remote", "--heads", "origin", RESULTS_BRANCH, cwd=target, capture=True)
+    if remote:
+        run("git", "checkout", "--quiet", "-B", RESULTS_BRANCH, f"origin/{RESULTS_BRANCH}", cwd=target)
+    else:
+        run("git", "checkout", "--quiet", "--orphan", RESULTS_BRANCH, cwd=target)
+        run("git", "rm", "-r", "--quiet", "--cached", "--ignore-unmatch", ".", cwd=target)
+        run("git", "clean", "-fdq", cwd=target)
     return target
 
 
@@ -150,7 +174,7 @@ def rebuild_index(results):
             "ci": load_json(folder / "ci.json"),
             "stages": stages,
         })
-    entries.sort(key=lambda e: (version_key(e["minor"]), e["runId"]))
+    entries.sort(key=run_order)
     (results / "index.json").write_text(json.dumps({"runs": entries}, indent=2) + "\n")
     lines = [
         "# Bootstrap eval runs",
@@ -195,7 +219,11 @@ def publish(run_dir, repo, results_only=False):
     sha = run("git", "rev-parse", "HEAD", cwd=app, capture=True)
 
     if results_only:
-        meta.update({"appBranch": None, "appSha": sha, "versionBranch": None})
+        # Keep an app branch a previous full publish uploaded; the local sha
+        # was never pushed, so it is not a commit CI can be read from.
+        if not meta.get("appBranch"):
+            meta.update({"appBranch": None, "appSha": None, "versionBranch": None})
+        meta["localAppSha"] = sha
     else:
         problems = scan_for_secrets(app)
         if problems:
@@ -217,7 +245,7 @@ def publish(run_dir, repo, results_only=False):
         rebuild_index(target / "results")
         run("git", "add", "results", cwd=target)
         run("git", "commit", "--quiet", "-m", f"Add bootstrap eval run {meta['runId']}", cwd=target)
-        run("git", "push", "--quiet", "origin", "HEAD:master", cwd=target)
+        run("git", "push", "--quiet", "origin", f"HEAD:{RESULTS_BRANCH}", cwd=target)
     if not results_only:
         print(f"app:     https://github.com/{repo}/tree/{branch} ({sha[:8]})")
     print(f"results: https://github.com/{repo}/tree/master/results/{minor}/{meta['runId']}")
@@ -226,8 +254,8 @@ def publish(run_dir, repo, results_only=False):
 def record_ci(run_dir, repo):
     meta = load_json(run_dir / "eval" / "run.json") or {}
     sha = meta.get("appSha")
-    if not sha:
-        sys.exit("publish the run first: eval/run.json has no appSha")
+    if not meta.get("appBranch") or not sha:
+        sys.exit("publish the app first (without --results-only): eval/run.json has no uploaded app commit")
     raw = run("gh", "api", f"repos/{repo}/commits/{sha}/check-runs", "--paginate", capture=True)
     checks = [
         {"name": c["name"], "status": c["status"], "conclusion": c["conclusion"], "url": c["html_url"]}
@@ -254,15 +282,15 @@ def record_ci(run_dir, repo):
         run("git", "add", "results", cwd=target)
         if run("git", "diff", "--cached", "--quiet", cwd=target, check=False) != 0:
             run("git", "commit", "--quiet", "-m", f"Record CI for {meta['runId']}", cwd=target)
-            run("git", "push", "--quiet", "origin", "HEAD:master", cwd=target)
+            run("git", "push", "--quiet", "origin", f"HEAD:{RESULTS_BRANCH}", cwd=target)
     print(f"CI {'green' if summary['green'] else 'RED'}: " + ", ".join(f"{c['name']}={c['conclusion']}" for c in checks))
 
 
 def compare(repo):
-    raw = run("gh", "api", f"repos/{repo}/contents/results/index.json", "-H", "Accept: application/vnd.github.raw", capture=True)
+    raw = run("gh", "api", f"repos/{repo}/contents/results/index.json?ref={RESULTS_BRANCH}", "-H", "Accept: application/vnd.github.raw", capture=True)
     runs = json.loads(raw)["runs"]
     latest = {}
-    for entry in runs:
+    for entry in sorted(runs, key=run_order):
         latest[entry["minor"]] = entry
     minors = sorted(latest, key=version_key)
     if len(minors) < 2:
@@ -278,6 +306,11 @@ def compare(repo):
         for name, now in current["stages"].items():
             before = previous["stages"].get(name, {})
             flags = []
+            if "blocked" in (before.get("status"), now["status"]):
+                # Blocked for missing credentials: scored on the local half, never a regression.
+                print(f"{name:<16}{str(before.get('score')) + ' -> ' + str(now['score']):>14}"
+                      f"{str(before.get('minutes')) + ' -> ' + str(now['minutes']):>16}  {now['status']}")
+                continue
             if before.get("status") == "pass" and now["status"] != "pass":
                 flags.append(f"{before['status']} -> {now['status']}")
             if None not in (before.get("score"), now["score"]) and before["score"] - now["score"] >= REGRESSION_POINTS:
