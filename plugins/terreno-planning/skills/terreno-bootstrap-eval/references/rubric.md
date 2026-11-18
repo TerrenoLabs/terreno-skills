@@ -128,7 +128,7 @@ Pass mark is the score below which the conductor runs a fix round.
 - 10 CircleCI green on the uploaded commit
 
 ### agent-tooling — weight 5, pass mark 80
-- 25 MCP config committed and both servers start with it
+- 25 MCP config committed and the local server starts with it; the hosted server answers, or its outage is recorded in the evidence (an outage of the hosted service does not cost these points)
 - 25 Terreno skills installed and committed
 - 25 `CLAUDE.md` and `AGENTS.md` describe this app (models, roles, flags, commands) and the commands work
 - 25 Docs search, last backend error, and a database read all work through the CLI or the local server
