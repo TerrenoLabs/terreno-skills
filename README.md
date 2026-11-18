@@ -69,3 +69,13 @@ files are stale.
 - `skills/`: flat installable copy for `npx skills add`, plus one generated folder per bundle
 - `bundles.json`: bundle definitions; source for the bundle skills, picker groups, and `skills.sh.json` groupings
 - `.claude-plugin/`, `.cursor-plugin/`, `.agents/plugins/`: marketplace manifests
+
+## How to contribute
+
+Terreno's [How to contribute](https://github.com/TerrenoLabs/terreno#how-to-contribute) covers
+where to talk, propose, and plan. For this repository:
+
+- Discuss skill or pipeline changes in Slack `#terreno` or a
+  [Terreno Idea discussion](https://github.com/TerrenoLabs/terreno/discussions/new?category=ideas).
+- Edit the skill under `plugins/` and `skills/`, run `python3 .github/scripts/bundles.py`, and
+  open a PR here. CI fails when generated bundle files are stale.
