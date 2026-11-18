@@ -31,6 +31,10 @@ Read the shared [`lifecycle contract`](../../references/lifecycle-contract.md),
 - Prior Pick attempts
 - Exact Roast failures or Taste/CI/review evidence when retrying
 - Known blockers and existing artifacts
+- The current task's test brief (Seam, Interface, Cases, Blast radius, Test skills) and
+  the IP's brief, Assumptions, and Decisions
+- For a UI task, the snapshot artboards its `Design:` line names, in the directory the
+  IP's `## Design` `Snapshot:` line gives
 
 ## Procedure
 
@@ -51,15 +55,28 @@ Read the shared [`lifecycle contract`](../../references/lifecycle-contract.md),
    guidance. Do not load the whole catalog.
 4. **Focus retries.** Convert prior failure evidence into a hypothesis and the smallest
    safe change. Record attempted approaches; do not repeat one without new evidence.
-5. **Specify.** State one caller-visible behavior and the highest public seam that proves
-   it. List its edge cases before writing code: empty, missing, and error inputs;
-   loading and disabled states; boundaries; permissions; web versus native. Take them
-   from the acceptance criteria and repository test rules. Each one becomes a test in
-   this slice, so Roast proves them instead of discovering them.
-6. **Encode.** Add one failing test and run the repository's closest test command. Confirm
-   it fails for the intended product reason.
-7. **Fulfill.** Implement the minimum code that passes. Prefer real integrations and
-   narrow injected fakes at true external boundaries.
+5. **Specify.** Write all of this task's tests before any implementation, from its test
+   brief, per [tests first](references/testing.md#tests-first-per-task). Dispatch a fresh
+   subagent (Claude Code: `general-purpose`, never a fork) with a **test briefing**: the
+   task's criteria and test brief, the IP's brief, Assumptions, and Decisions, and the
+   path of the testing guidance. It gets no patch, because there is none yet, and you do
+   not describe your planned implementation. Without subagents, write the tests yourself
+   before touching product code. A task whose brief says `Cases: none (untestable: …)`
+   writes no tests; Roast checks the claim. An IP with no test brief on the task (approved
+   before the format) falls back to listing the edge cases yourself from the criteria:
+   empty, missing, and error inputs; loading and disabled states; boundaries;
+   permissions; web versus native. For a UI task, the briefing also names the snapshot
+   artboards and states its `Design:` line lists. Build to the snapshot, never to the live
+   canvas, unless the task's criteria or a Decision say otherwise. An artboard the
+   snapshot lacks is `BLOCKED` naming it, not a guess.
+6. **Encode.** Run the tests with the repository's closest test command and confirm every
+   one fails for the reason its case describes, not a typo, import, or setup error. A test
+   that passes now does not test the new behavior: send it back to the writer with that
+   evidence, or fix it yourself without looking at product code you have not written.
+7. **Fulfill.** Implement the minimum code that makes the tests pass. Prefer real
+   integrations and narrow injected fakes at true external boundaries. The tests are the
+   contract: do not weaken, skip, or delete them. A test that is genuinely wrong may be
+   changed with a one-line reason per file, which Roast reviews.
 8. **Clean the Kitchen.** Once the vertical slice is green, refactor names/structure,
    remove debug/dead code, and rerun the affected repository-prescribed checks.
 9. **Review independently.** Build one task-scoped briefing (criteria, file list, this
@@ -96,8 +113,9 @@ Read the shared [`lifecycle contract`](../../references/lifecycle-contract.md),
     the current context cannot safely continue. `BLOCKED` exits the loop. Pick owns
     the inner loop. Do not rely on Roast to start the next Pick.
 
-Repeat Specify → Encode → Fulfill for learned behaviors inside this one slice. Do not
-batch all tests first. Do not expand into the next task until Roast PASS.
+Write every test for this task before its implementation, and none for later tasks. A
+behavior discovered while building that is inside this task's criteria gets a test first,
+then code. Do not expand into the next task until Roast PASS.
 
 ## Supporting skills
 
@@ -108,7 +126,9 @@ generated-code workflows, and repository gotchas.
 ## Evidence produced
 
 - Files/behavior completed for each task this invocation finished
-- Red and green test evidence plus required lint/type/build/runtime results
+- The tests written from the brief, red evidence before implementation, green after, and
+  each test changed during Fulfill with its reason
+- Required lint/type/build/runtime results
 - Internal review results
 - Drift decision and artifact references
 - Attempted-approach summary (especially on retries)

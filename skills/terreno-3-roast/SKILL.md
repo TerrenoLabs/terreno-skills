@@ -40,7 +40,18 @@ Read the shared [`lifecycle contract`](references/lifecycle-contract.md),
    files and criteria. Repository-mandatory capabilities are hard requirements.
 3. **Build the matrix.** Map every in-scope criterion **for the current task** to one or
    more objective methods and the evidence required. Include promised regressions,
-   compatibility, and non-scope that this task could break.
+   compatibility, and non-scope that this task could break. Check the tests written first
+   for this task against its test brief: every `Cases` entry and criterion has a test,
+   expected values are the brief's literals, and each `Blast radius` consumer has its case
+   at the assigned layer. Review every change Pick made to those tests, with its reason.
+   For a UI task, each artboard state its `Design:` line names is a criterion, read from
+   the IP's `Snapshot:` directory: copy, fields, and those states match the snapshot, not
+   the live canvas. Where the task's criteria or a Decision differ from the snapshot, the
+   IP wins. A missing case, a wrong expected value, a test that cannot fail, a change that
+   weakens a criterion, or an `untestable` claim a test could disprove is `FAIL`; when the
+   defect is in the tests rather than the code, start the fail item's `need` with
+   `tests:` so Pick rewrites them from the brief. An IP whose tasks have no test brief
+   (approved before the format) skips this check.
 4. **Inspect and execute.** Review this task's patch and run concrete checks in this
    invocation: repository-prescribed tests, integration/system behavior, lint/type/build
    checks, runtime/API/database probes, regression reproductions, or real UI interaction.
@@ -82,6 +93,8 @@ probes. If repository policy makes one mandatory and it is unavailable, emit `BL
 ## Evidence produced
 
 - Requirement-to-evidence matrix for the current task
+- Test-brief coverage: each case and criterion mapped to its test, and each test change
+  Pick made with its reason
 - Commands/probes/interactions and outcomes
 - Artifact/log/API response references
 - Exact expected vs actual behavior for every failure
