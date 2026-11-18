@@ -64,6 +64,7 @@
       "strict": false,
       "description": "Subset of the terreno plugin. Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps.",
       "skills": [
+        "./skills/terreno-bootstrap",
         "./skills/building-terreno-apps",
         "./skills/terreno-backend-api",
         "./skills/terreno-ui",
@@ -117,7 +118,8 @@
         "./skills/backfill-regression",
         "./skills/backfill-user-guide",
         "./skills/bootstrap-mcp-server",
-        "./skills/set-up-social-login"
+        "./skills/set-up-social-login",
+        "./skills/terreno-bootstrap-eval"
       ]
     }
   ]
