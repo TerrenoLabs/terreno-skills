@@ -416,7 +416,8 @@ its first minute.
    proxy trust from stage 3, CORS and auth origins set to the deployed web
    origin.
 3. Add a deploy workflow that runs after CI on the default branch.
-4. Run the seed's initial-user step against production (stage 13 defines it).
+4. Leave the production initial user to stage 13 (handoff), which adds the
+   seed step and runs it against the deployed backend.
 
 **Exit check (deployed):** the root URL loads, a deep link loads on refresh,
 sign-in works against the deployed backend, and the sync socket connects.
@@ -440,8 +441,10 @@ finish.
 1. **Initial user.** Add a seed step that creates one admin from
    `INITIAL_ADMIN_EMAIL` and `INITIAL_ADMIN_PASSWORD`, idempotently, allowed
    in production. Locally, generate a random password into the gitignored
-   `.env`, run the step, and confirm the sign-in. Never print the password in
-   a committed file; say which file holds it.
+   `.env`, run the step, and confirm the sign-in. When stage 12 deployed the
+   app, run the step against production too, with the password in the host's
+   secret store. Never print the password in a committed file; say which file
+   or secret holds it.
 2. **`CHECKLIST.md`** at the repository root, from
    [`checklist-template.md`](checklist-template.md). One section per stage,
    each item a checkbox the user can verify in under two minutes, already

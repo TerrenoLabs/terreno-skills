@@ -63,6 +63,10 @@ Built with Terreno <version> on <date>. Status of each stage is in
 ## 12. Deploy
 - [ ] <"Deployed at <URL>" or the exact credentials and commands needed>
 
+## 13. Handoff
+- [x] Initial admin `<email>` signs in; the password is in `<file or secret name>`
+- [x] A fresh clone reaches a running app by following `README.md`
+
 ## Before real users
 - [ ] Remove the development seed users from production
 - [ ] Custom domain and HTTPS

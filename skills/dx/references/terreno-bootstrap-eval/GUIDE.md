@@ -75,7 +75,9 @@ For each stage, in order:
    using the status from `.terreno/bootstrap.json`, not the builder's reply.
    Record builder token use when the host reports it:
    `--tokens <n>`.
-4. `python3 SKILL_DIR/scripts/static_checks.py <run>/app --stage <stage> --out <run>/eval/static/<stage>.json`
+4. `python3 SKILL_DIR/scripts/static_checks.py <app-dir> --stage <stage> --out <run>/eval/static/<stage>.json`,
+   where `<app-dir>` is the app directory from setup (`<run>/app` also works:
+   the script finds the one app repository inside it)
 5. **Spawn a fresh scorer** with [`references/scorer-prompt.md`](references/scorer-prompt.md),
    filled in for this stage. It writes `<run>/eval/scores/<stage>.json`.
 6. Decide:

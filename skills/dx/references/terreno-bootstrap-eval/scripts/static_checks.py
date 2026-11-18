@@ -147,7 +147,7 @@ def roles(app):
 def admin(app):
     return [
         check("AdminApp registered", app.grep(r"AdminApp", "backend/src")),
-        check("admin screens exist", app.glob("frontend/app/**/admin/*")),
+        check("admin screens exist", app.glob("frontend/app/**/admin/*") or app.glob("frontend/app/admin/*")),
         check("admin gate in frontend", app.grep(r"canOpenAdminPage|\.admin\b", "frontend/app")),
     ]
 
@@ -251,13 +251,21 @@ CHECKS = {
 }
 
 
+def app_root(path):
+    """The app is the given directory, or the one git repository the scaffold CLI made inside it."""
+    if (path / ".git").exists() or not path.is_dir():
+        return path
+    nested = [child for child in path.iterdir() if (child / ".git").exists()]
+    return nested[0] if len(nested) == 1 else path
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument("app", type=pathlib.Path)
     parser.add_argument("--stage", choices=STAGES)
     parser.add_argument("--out", type=pathlib.Path)
     args = parser.parse_args()
-    app = App(args.app.resolve())
+    app = App(app_root(args.app.resolve()))
     stages = [args.stage] if args.stage else STAGES
     report = {"app": str(app.root), "state": state(app).get("stages", {}), "stages": {s: CHECKS[s](app) for s in stages}}
     body = json.dumps(report, indent=2) + "\n"
