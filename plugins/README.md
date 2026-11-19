@@ -8,7 +8,7 @@ copy as `terreno` (see [Hosts](#hosts)):
 
 | # | Stage | Contract |
 | --- | --- | --- |
-| 1 | **Grow** (`terreno-1-grow`) | Research, clarify, shape, and approve the IP/tasks |
+| 1 | **Grow** (`terreno-1-grow`) | Research, triage, grill, shape (test brief per task, e2e, user guide, design), cut, and approve the IP |
 | 2 | **Pick** (`terreno-2-pick`) | Build one slice, roast it, then pick the next until the list is done |
 | 3 | **Roast** (`terreno-3-roast`) | Prove the current task, then continue the pick-roast inner loop |
 | 4 | **Brew** (`terreno-4-brew`) | Final checks, commit/push, PR/evidence, confirm product CI on every discovered host, wait for review bots, then exit |

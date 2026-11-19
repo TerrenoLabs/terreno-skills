@@ -33,7 +33,9 @@ rule are adapted from the [awesome-copilot prd skill](https://github.com/github/
    structured question tool when the harness has one, get to the bottom of every vague
    answer, and confirm shared understanding before writing. Use the product tree below
    instead of Grow's design tree. Ask at least one round even when the conversation looks
-   complete; confirm what you inferred instead of assuming it.
+   complete; confirm what you inferred instead of assuming it. Grilling's triage, IP Open
+   questions, cut, approval-last, and approval-brief rules are Grow's only: a question the
+   owner defers becomes a `TBD` with who decides.
 3. **Write the PRD** with the template below, from the user's perspective. No file paths,
    modules, schemas, or code.
 4. **Apply the success-metric rule.** Every success metric and guardrail is concrete and
