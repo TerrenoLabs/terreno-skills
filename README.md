@@ -39,7 +39,7 @@ npx skills add TerrenoLabs/terreno-skills --skill lifecycle
 | `app` | `npx skills add TerrenoLabs/terreno-skills --skill app` | 13 | Backend, UI, light/dark mode, data, schema, admin, and test conventions for building Terreno apps. |
 | `ship` | `npx skills add TerrenoLabs/terreno-skills --skill ship` | 7 | UI verification, PR evidence, docs, releases, upgrades, store assets, and GCP deploys. |
 | `design` | `npx skills add TerrenoLabs/terreno-skills --skill design` | 2 | Turn a Claude design into a Terreno implementation plan and Linear work. |
-| `dx` | `npx skills add TerrenoLabs/terreno-skills --skill dx` | 10 | Debug a running app over MCP, set up and write backend, frontend, and mobile tests, backfill regression suites and user guides, and wire social login and MCP servers. |
+| `dx` | `npx skills add TerrenoLabs/terreno-skills --skill dx` | 11 | Debug a running app over MCP, set up and write backend, frontend, and mobile tests, backfill regression suites and user guides, and wire social login and MCP servers. |
 <!-- bundles:end -->
 
 Other ways to take a slice:

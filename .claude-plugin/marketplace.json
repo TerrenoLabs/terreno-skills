@@ -111,6 +111,7 @@
       "description": "Subset of the terreno plugin. Debug a running app over MCP, set up and write backend, frontend, and mobile tests, backfill regression suites and user guides, and wire social login and MCP servers.",
       "skills": [
         "./skills/debug-with-mcp",
+        "./skills/react-performance",
         "./skills/terreno-test-setup",
         "./skills/terreno-backend-tests",
         "./skills/terreno-frontend-tests",

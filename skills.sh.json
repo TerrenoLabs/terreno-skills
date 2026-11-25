@@ -85,6 +85,7 @@
       "description": "Debug a running app over MCP, set up and write backend, frontend, and mobile tests, backfill regression suites and user guides, and wire social login and MCP servers.",
       "skills": [
         "debug-with-mcp",
+        "react-performance",
         "terreno-test-setup",
         "terreno-backend-tests",
         "terreno-frontend-tests",
